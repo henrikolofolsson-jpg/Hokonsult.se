@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hokonsult AB</title>
+  <title>Hokonsult AB – Grundförstärkning & Byggledning</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background: #111;
-      color: #f0f0f0;
+      color: #f4f4f4;
+      line-height: 1.6;
     }
     header {
       background: #222;
-      padding: 1rem;
+      padding: 20px;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      color: #fff;
+      font-size: 2rem;
+      color: #00b894;
     }
     nav {
       display: flex;
@@ -28,107 +31,122 @@
     }
     nav a {
       color: #fff;
-      padding: 1rem;
+      padding: 14px 20px;
       text-decoration: none;
+      text-transform: uppercase;
     }
     nav a:hover {
-      background: #444;
+      background: #00b894;
+      color: #111;
     }
     .hero {
-      background: url("img/shawn-mcnulty-berMrRj8wPI-unsplash.jpg") no-repeat center center/cover;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       text-align: center;
+      padding: 40px 20px;
+      background: url("img/belinda-fewings-XzUGDscp2SU-unsplash.jpg") center/cover no-repeat;
+      color: #fff;
     }
     .hero h2 {
+      font-size: 2.5rem;
       background: rgba(0,0,0,0.6);
-      padding: 1rem 2rem;
-      border-radius: 8px;
+      display: inline-block;
+      padding: 10px 20px;
     }
     section {
-      padding: 2rem;
-      max-width: 900px;
+      padding: 40px 20px;
+      max-width: 1000px;
       margin: auto;
     }
-    section img {
-      max-width: 100%;
+    section h2 {
+      color: #00b894;
+      margin-bottom: 20px;
+    }
+    .service {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      background: #222;
       border-radius: 8px;
-      margin: 1rem 0;
+      overflow: hidden;
+    }
+    .service img {
+      width: 100%;
+      max-width: 400px;
+      object-fit: cover;
+    }
+    .service div {
+      flex: 1;
+      padding: 20px;
     }
     footer {
-      background: #222;
-      padding: 2rem;
+      background: #111;
+      color: #bbb;
       text-align: center;
-      font-size: 0.9rem;
+      padding: 20px;
     }
-    /* Mobilanpassning */
-    @media (max-width: 768px) {
-      nav {
+    footer a {
+      color: #00b894;
+      text-decoration: none;
+    }
+    @media(max-width:768px) {
+      .service {
         flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Hokonsult AB</h1>
+    <p>Konsulttjänster inom byggbranschen – fokus på grund & anläggning</p>
+  </header>
 
-<header>
-  <h1>Hokonsult AB</h1>
-</header>
+  <nav>
+    <a href="#grundforstarkning">Grundförstärkning</a>
+    <a href="#byggledning">Byggledning</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
 
-<nav>
-  <a href="#hem">Hem</a>
-  <a href="#grundforstarkning">Grundförstärkning</a>
-  <a href="#byggledning">Byggledning</a>
-  <a href="#kontakt">Kontakt</a>
-</nav>
+  <div class="hero">
+    <h2>Trygga lösningar för framtiden</h2>
+  </div>
 
-<div class="hero" id="hem">
-  <h2>Konsulttjänster inom bygg och anläggning</h2>
-</div>
+  <section id="grundforstarkning">
+    <h2>Grundförstärkning</h2>
+    <div class="service">
+      <img src="img/shawn-mcnulty-berMrRj8wPI-unsplash.jpg" alt="Spricka i betong">
+      <div>
+        <p>Många äldre byggnader får skador på grund av sättningar. Dessa sättningar beror ofta på grundvattensänkning, tung trafik eller närliggande schaktning och sprängning. Ju tidigare en grundförstärkning utförs, desto lägre blir de slutliga kostnaderna.</p>
+        <p>Vi utför grundförstärkning av byggnader och konstruktioner i alla storlekar. Arbetet sker med specialmaskiner och erfarna yrkesarbetare, alltid med högsta kvalitet och säkerhet.</p>
+        <p><strong>Metoder:</strong> Slagning av stålrörspåle, kohesionspåle (vingpåle), borrning av stålkärnepåle, injekteringspåle m.m.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="grundforstarkning">
-  <h2>Grundförstärkning</h2>
-  <p>
-    Många äldre byggnader har skador på grund av sättningar, som kan bero på 
-    grundvattensänkning, tung trafik eller närliggande schakt- och byggarbeten. 
-    Ju tidigare en grundförstärkning utförs, desto lägre blir de slutliga kostnaderna.
-  </p>
-  <img src="img/adam-gavlak-lqWf-yoQztI-unsplash.jpg" alt="Grundförstärkning">
-  <p>
-    Vi erbjuder metoder som slagning av stålrörspåle, kohesionspåle (vingpåle) samt 
-    borrning av stålrörs- och stålkärnepålar. Arbetet utförs med moderna maskiner och 
-    professionella yrkesarbetare. Vi kan även göra kostnadsfria bedömningar på plats.
-  </p>
-</section>
+  <section id="byggledning">
+    <h2>Byggledning</h2>
+    <div class="service">
+      <img src="img/adam-gavlak-lqWf-yoQztI-unsplash.jpg" alt="Byggprojekt">
+      <div>
+        <p>Som byggledare erbjuder Henrik Olsson praktiskt stöd på plats, tidplanering, ekonomi, upphandling och koordinering mellan beställare och entreprenör.</p>
+        <p>Med lång erfarenhet från anläggnings- och byggprojekt säkerställs att projektet följer både tidsplan och budget med hög kvalitet.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="byggledning">
-  <h2>Byggledning</h2>
-  <p>
-    Henrik Olsson har lång erfarenhet av projektledning och byggledning. Vi erbjuder 
-    praktiskt platsstöd, tidplanering, ekonomihantering, upphandling och koordinering 
-    mellan beställare och entreprenörer.
-  </p>
-  <img src="img/joylynn-goh-pW7GWoG50sY-unsplash.jpg" alt="Byggledning">
-</section>
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <div class="service">
+      <img src="img/sara-kurfess-6NHyiqGlP1Q-unsplash.jpg" alt="Kontakt">
+      <div>
+        <p>Vill du veta mer eller boka en kostnadsfri bedömning?</p>
+        <p>📧 <a href="mailto:Henrik.olof.olsson@gmail.com">Henrik.olof.olsson@gmail.com</a><br>
+        📞 <a href="tel:0708855579">070-885 55 79</a></p>
+      </div>
+    </div>
+  </section>
 
-<section id="bilder">
-  <h2>Intryck från arbeten</h2>
-  <img src="img/sara-kurfess-6NHyiqGlP1Q-unsplash.jpg" alt="Detalj">
-  <img src="img/belinda-fewings-XzUGDscp2SU-unsplash.jpg" alt="Byggnader">
-  <img src="img/killari-hotaru-LY8GGT3eJe0-unsplash.jpg" alt="Stadsmiljö">
-</section>
-
-<section id="kontakt">
-  <h2>Kontakt</h2>
-  <p>Mail: <a href="mailto:henrik.olof.olsson@gmail.com">henrik.olof.olsson@gmail.com</a></p>
-  <p>Tel: <a href="tel:0708855579">070-885 55 79</a></p>
-</section>
-
-<footer>
-  &copy; 2025 Hokonsult AB
-</footer>
-
+  <footer>
+    <p>&copy; 2025 Hokonsult AB – All rights reserved.</p>
+  </footer>
 </body>
 </html>
