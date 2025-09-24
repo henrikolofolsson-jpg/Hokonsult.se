@@ -1,152 +1,201 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hokonsult AB – Grundförstärkning & Byggledning</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #111;
-      color: #f4f4f4;
-      line-height: 1.6;
-    }
-    header {
-      background: #222;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #00b894;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #333;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      padding: 14px 20px;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    nav a:hover {
-      background: #00b894;
-      color: #111;
-    }
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-      background: url("img/belinda-fewings-XzUGDscp2SU-unsplash.jpg") center/cover no-repeat;
-      color: #fff;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      background: rgba(0,0,0,0.6);
-      display: inline-block;
-      padding: 10px 20px;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    section h2 {
-      color: #00b894;
-      margin-bottom: 20px;
-    }
-    .service {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-      background: #222;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .service img {
-      width: 100%;
-      max-width: 400px;
-      object-fit: cover;
-    }
-    .service div {
-      flex: 1;
-      padding: 20px;
-    }
-    footer {
-      background: #111;
-      color: #bbb;
-      text-align: center;
-      padding: 20px;
-    }
-    footer a {
-      color: #00b894;
-      text-decoration: none;
-    }
-    @media(max-width:768px) {
-      .service {
-        flex-direction: column;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hokonsult AB – Grundförstärkning & Byggledning</title>
+<style>
+  :root{
+    --ink:#0b1220; --muted:#5b6473; --line:#e7ecf2;
+    --panel:#ffffff; --tint:rgba(0,0,0,.45);
+    --green:#0f9d58; --red:#e53935;
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px}
+  .brand{font-weight:800;letter-spacing:.2px}
+  .brand b{color:var(--green)}
+  nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;text-decoration:none;color:var(--ink);transition:.15s}
+  .btn:hover{border-color:var(--green);color:var(--green)}
+  .btn--primary{background:var(--green);border-color:var(--green);color:#fff}
+  .btn--primary:hover{filter:brightness(1.05)}
+
+  /* FULL-BLEED SECTIONS */
+  .full{
+    position:relative; isolation:isolate; width:100%;
+    min-height:62vh; display:grid; place-items:center;
+    background-position:center; background-size:cover; background-repeat:no-repeat;
+  }
+  .full::after{content:""; position:absolute; inset:0; background:var(--tint)}
+  .box{
+    position:relative; z-index:1; max-width:1000px; width:100%;
+    padding:0 20px;
+  }
+  .card{
+    background:rgba(255,255,255,.92); backdrop-filter:blur(6px);
+    border:1px solid var(--line); border-radius:16px; padding:20px;
+  }
+  h1,h2{margin:0 0 10px}
+  p{margin:0 0 10px; color:#2b3140}
+
+  /* CONTENT */
+  .section{max-width:1000px;margin:32px auto;padding:0 20px}
+  .lead{font-size:18px;color:#394153}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+  ul{margin:8px 0 0 18px}
+  li{margin:6px 0}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);margin-top:40px}
+  .foot{max-width:1200px;margin:0 auto;padding:18px 20px;color:#667084;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid #dfe3ea}
+  .foot a:hover{color:var(--green);border-color:var(--green)}
+
+  /* MOBILE */
+  @media (max-width:900px){ .grid2{grid-template-columns:1fr} .full{min-height:56vh} }
+
+  /* Call on mobile */
+  .call-btn{
+    position:fixed;right:16px;bottom:16px;z-index:40;
+    background:var(--red);color:#fff;font-weight:700;
+    padding:12px 16px;border-radius:12px;border:1px solid #b12a2a;
+    box-shadow:0 12px 26px rgba(0,0,0,.35);text-decoration:none
+  }
+  @media (min-width:721px){.call-btn{display:none}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Hokonsult AB</h1>
-    <p>Konsulttjänster inom byggbranschen – fokus på grund & anläggning</p>
-  </header>
 
-  <nav>
-    <a href="#grundforstarkning">Grundförstärkning</a>
-    <a href="#byggledning">Byggledning</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
+<header>
+  <div class="wrap">
+    <div class="brand">HOKONSULT <b>AB</b></div>
+    <nav>
+      <a class="btn" href="#hem">Hem</a>
+      <a class="btn" href="#grundforstarkning">Grundförstärkning</a>
+      <a class="btn" href="#byggledning">Byggledning</a>
+      <a class="btn btn--primary" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-  <div class="hero">
-    <h2>Trygga lösningar för framtiden</h2>
+<!-- HERO – HEL BAKGRUND -->
+<section id="hem" class="full" style="background-image:url('img/adam-gavlak-lqWf-yoQztI-unsplash.jpg');">
+  <div class="box">
+    <div class="card">
+      <h1>Byggledning & grundförstärkning – helhetslösningar som håller</h1>
+      <p class="lead">Vi hjälper beställare och entreprenörer att lösa sättningar, säkra grundläggning och driva projekt med tydlig tid, kostnad och kvalitet. Snabb platsbedömning, raka beslut och leverans utan överraskningar.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+        <a class="btn btn--primary" href="#grundforstarkning">Läs om grundförstärkning</a>
+        <a class="btn" href="#byggledning">Våra byggledartjänster</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRUNDFÖRSTÄRKNING – HEL BAKGRUND MED MER TEXT UNDER -->
+<section id="grundforstarkning" class="full" style="background-image:url('img/shawn-mcnulty-berMrRj8wPI-unsplash.jpg');">
+  <div class="box">
+    <div class="card">
+      <h2>Grundförstärkning vid sättningar</h2>
+      <p>Sprickor i väggar, tröga dörrar/fönster, lutande golv? Vi stabiliserar byggnader med pålning och relaterade metoder – tryggt och effektivt.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
+        <a class="btn btn--primary" href="#gf-text">Läs mer</a>
+        <a class="btn" href="#kontakt">Boka platsbedömning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gf-text" class="section">
+  <div class="grid2">
+    <article class="panel">
+      <h3>När behövs grundförstärkning?</h3>
+      <p>Du kan behöva åtgärd om du märker:</p>
+      <ul>
+        <li>Sprickor i vägg, golv eller grundmur</li>
+        <li>Dörrar/fönster som kärvar eller kilas</li>
+        <li>Lutande eller ojämna golv</li>
+        <li>Synliga sättningar efter schakt, pålning eller grundvattensänkning</li>
+      </ul>
+      <p class="lead" style="margin-top:8px">Ju tidigare åtgärd, desto lägre slutkostnad och mindre följdskador.</p>
+    </article>
+
+    <article class="panel">
+      <h3>Metoder vi använder</h3>
+      <ul>
+        <li><b>Slagning av stålrörspåle</b> – kostnadseffektiv, låga vibrationer. Vanlig vid förstärkning av befintliga byggnader.</li>
+        <li><b>Slagning av kohesionspåle (vingpåle)</b> – för stora lerdjup där stödpålning till berg inte är rimlig. Levereras med små maskiner, bra i trånga miljöer.</li>
+        <li><b>Borrad pålning</b> – stålrörspåle, injekteringspåle och stålkärnepåle. Säkert ned till friskt berg, fungerar där hinder förekommer.</li>
+        <li><b>Stålkärnepålning</b> – stålkärnor monteras i förborrade rör; kan göras spetsburen (foderrör till berg) eller mantelburen (gjuts fast i berg). Hanterar både tryck och drag.</li>
+        <li><b>Kärnborrad stålrörspåle/-kärnepåle</b> – för känsliga miljöer där slående borrning inte tillåts; mycket god rakhet och minimal risk för kontamination.</li>
+      </ul>
+    </article>
   </div>
 
-  <section id="grundforstarkning">
-    <h2>Grundförstärkning</h2>
-    <div class="service">
-      <img src="img/shawn-mcnulty-berMrRj8wPI-unsplash.jpg" alt="Spricka i betong">
-      <div>
-        <p>Många äldre byggnader får skador på grund av sättningar. Dessa sättningar beror ofta på grundvattensänkning, tung trafik eller närliggande schaktning och sprängning. Ju tidigare en grundförstärkning utförs, desto lägre blir de slutliga kostnaderna.</p>
-        <p>Vi utför grundförstärkning av byggnader och konstruktioner i alla storlekar. Arbetet sker med specialmaskiner och erfarna yrkesarbetare, alltid med högsta kvalitet och säkerhet.</p>
-        <p><strong>Metoder:</strong> Slagning av stålrörspåle, kohesionspåle (vingpåle), borrning av stålkärnepåle, injekteringspåle m.m.</p>
+  <article class="panel" style="margin-top:20px">
+    <h3>Varför Hokonsult?</h3>
+    <ul>
+      <li><b>Helhetslösning</b> – från platsbesiktning och geoteknisk bedömning till metodval, genomförande och dokumentation.</li>
+      <li><b>Erfaren produktion</b> – vi planerar för verklig byggbarhet och störningsfria montage.</li>
+      <li><b>Tid & kostnad i fokus</b> – tydliga kalkyler, prognoser och uppföljning. Inga överraskningar.</li>
+      <li><b>Svensk standard</b> – arbete och rapportering enligt gällande normer och krav.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- BYGGLEDNING – HEL BAKGRUND -->
+<section id="byggledning" class="full" style="background-image:url('img/joylynn-goh-pW7GWoG50sY-unsplash.jpg');">
+  <div class="box">
+    <div class="card">
+      <h2>Byggledning & projektstöd</h2>
+      <p>Henrik Olsson leder produktion nära verksamheten – tidplan, ekonomi, kvalitet och samordning. Raka besked och tempo i genomförandet.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
+        <a class="btn btn--primary" href="#kontakt">Kontakta oss</a>
+        <a class="btn" href="tel:+46708855579">Ring 070-885 55 79</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="byggledning">
-    <h2>Byggledning</h2>
-    <div class="service">
-      <img src="img/adam-gavlak-lqWf-yoQztI-unsplash.jpg" alt="Byggprojekt">
-      <div>
-        <p>Som byggledare erbjuder Henrik Olsson praktiskt stöd på plats, tidplanering, ekonomi, upphandling och koordinering mellan beställare och entreprenör.</p>
-        <p>Med lång erfarenhet från anläggnings- och byggprojekt säkerställs att projektet följer både tidsplan och budget med hög kvalitet.</p>
+<!-- LITEN BILDSEKTION / STÄMNING -->
+<section class="section">
+  <div class="grid2">
+    <div class="panel">
+      <h3>Stad & kulturmiljö</h3>
+      <p>Vi arbetar ofta i känsliga miljöer där hänsyn till omgivning och drift är avgörande. Metodval och logistik anpassas för minimala störningar.</p>
+    </div>
+    <div class="panel" style="background:url('img/belinda-fewings-XzUGDscp2SU-unsplash.jpg') center/cover; min-height:220px"></div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="full" style="background-image:url('img/sara-kurfess-6NHyiqGlP1Q-unsplash.jpg');">
+  <div class="box">
+    <div class="card">
+      <h2>Kontakta oss</h2>
+      <p>Vi återkopplar snabbt med ett första förslag och tidsplan.</p>
+      <p><b>E-post:</b> <a href="mailto:Info@HOK.se">Info@HOK.se</a> &nbsp; • &nbsp; <b>Tel:</b> <a href="tel:+46708855579">070-885 55 79</a></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+        <a class="btn btn--primary" href="mailto:Info@HOK.se">Maila nu</a>
+        <a class="btn" href="tel:+46708855579">Ring nu</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <div class="service">
-      <img src="img/sara-kurfess-6NHyiqGlP1Q-unsplash.jpg" alt="Kontakt">
-      <div>
-        <p>Vill du veta mer eller boka en kostnadsfri bedömning?</p>
-        <p>📧 <a href="mailto:Henrik.olof.olsson@gmail.com">Henrik.olof.olsson@gmail.com</a><br>
-        📞 <a href="tel:0708855579">070-885 55 79</a></p>
-      </div>
-    </div>
-  </section>
+<footer>
+  <div class="foot">
+    <div>© 2025 Hokonsult AB — Henrik Olsson</div>
+    <div><a href="mailto:Info@HOK.se">Info@HOK.se</a> · <a href="tel:+46708855579">070-885 55 79</a></div>
+  </div>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Hokonsult AB – All rights reserved.</p>
-  </footer>
+<a href="tel:+46708855579" class="call-btn">📞 Ring nu</a>
+
 </body>
 </html>
