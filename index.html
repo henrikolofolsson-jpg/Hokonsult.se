@@ -1,197 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hokonsult — Byggledning & Grundförstärkning</title>
-<style>
-  :root{
-    --bg:#0f1115;        /* mörk bakgrund */
-    --panel:#141821;     /* sektioner */
-    --text:#e8eaed;      /* huvudtext */
-    --muted:#bbc1cc;     /* sekundär text */
-    --line:#232938;      /* tunna linjer */
-    --green:#17c964;     /* primär */
-    --red:#ef4444;       /* accent */
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-
-  /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(15,17,21,.85);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
-  .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px}
-  .brand{font-weight:800;letter-spacing:.4px}
-  .brand b{color:var(--green)}
-  nav{margin-left:auto;display:flex;gap:8px}
-  .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--text);text-decoration:none;transition:.15s}
-  .btn:hover{border-color:var(--green);color:var(--green)}
-  .btn--primary{border-color:var(--green);background:var(--green);color:#07110b}
-  .btn--primary:hover{filter:brightness(1.06)}
-
-  /* Mobile nav */
-  .hamb{display:none;margin-left:auto}
-  #menu-toggle{display:none}
-  @media (max-width:900px){
-    nav{display:none}
-    .hamb{display:block}
-    #menu-toggle:checked~.drawer{max-height:260px;opacity:1}
-    .drawer{max-height:0;opacity:0;overflow:hidden;transition:max-height .25s ease,opacity .25s ease;border-top:1px solid var(--line)}
-    .drawer a{display:block;padding:12px 20px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--text)}
-    .drawer a:hover{background:#10131a}
-  }
-
-  /* Hero */
-  .hero{max-width:1200px;margin:48px auto 24px;padding:0 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
-  .hero h1{margin:0 0 10px;font-size:42px;letter-spacing:.2px}
-  .hero p{margin:0;color:var(--muted);max-width:720px}
-  .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
-  .badge{display:inline-block;margin-top:12px;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
-  .hero-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
-  .stat{display:flex;align-items:baseline;gap:10px}
-  .stat b{font-size:28px;color:var(--green)}
-  .stat span{color:var(--muted)}
-  @media (max-width:900px){ .hero{grid-template-columns:1fr} .hero h1{font-size:34px} }
-
-  /* Sections */
-  .section{max-width:1200px;margin:24px auto 0;padding:0 20px}
-  .heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-  .heading h2{margin:0;font-size:24px}
-  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
-  .card h3{margin:0 0 6px}
-  .card p{margin:0;color:var(--muted)}
-  .card .btn{margin-top:10px}
-  @media (max-width:900px){ .grid{grid-template-columns:1fr} }
-
-  /* Value props */
-  .features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-  .feature{background:transparent;border:1px dashed var(--line);border-radius:14px;padding:18px}
-  .feature h4{margin:0 0 6px}
-  .feature p{margin:0;color:var(--muted)}
-  @media (max-width:900px){ .features{grid-template-columns:1fr} }
-
-  /* Footer */
-  footer{border-top:1px solid var(--line);margin-top:36px}
-  .foot{max-width:1200px;margin:0 auto;padding:18px 20px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
-  .foot a{color:var(--text)}
-
-  /* Mobile call button */
-  .call-btn{
-    position:fixed;right:16px;bottom:16px;z-index:40;
-    background:var(--red);color:#fff;font-weight:700;
-    padding:12px 16px;border-radius:12px;border:1px solid #b92a2a;
-    box-shadow:0 12px 28px rgba(0,0,0,.45);
-  }
-  .call-btn:hover{filter:brightness(1.05)}
-  @media (min-width:721px){ .call-btn{display:none} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hokonsult AB</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f0f0f0;
+    }
+    header {
+      background: #222;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      color: #fff;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      padding: 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #444;
+    }
+    .hero {
+      background: url("img/shawn-mcnulty-berMrRj8wPI-unsplash.jpg") no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h2 {
+      background: rgba(0,0,0,0.6);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    footer {
+      background: #222;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    /* Mobilanpassning */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header -->
 <header>
-  <div class="wrap">
-    <div class="brand">HOKONSULT <b>AB</b></div>
-
-    <!-- Desktop nav -->
-    <nav aria-label="Huvudmeny">
-      <a class="btn" href="index.html">Hem</a>
-      <a class="btn" href="grundforstarkning.html">Grundförstärkning</a>
-      <a class="btn" href="byggledning.html">Byggledning</a>
-      <a class="btn" href="kontakt.html">Kontakt</a>
-      <a class="btn btn--primary" href="mailto:henrik.olof.olsson@gmail.com">Maila oss</a>
-    </nav>
-
-    <!-- Mobile hamburger -->
-    <label class="hamb btn" for="menu-toggle">Meny</label>
-    <input id="menu-toggle" type="checkbox">
-  </div>
-  <div class="drawer">
-    <a href="index.html">Hem</a>
-    <a href="grundforstarkning.html">Grundförstärkning</a>
-    <a href="byggledning.html">Byggledning</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="tel:+46708855579">Ring: 070-885 55 79</a>
-  </div>
+  <h1>Hokonsult AB</h1>
 </header>
 
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1>Byggledning & grundförstärkning — levererat med precision</h1>
-      <p>Hokonsult hjälper beställare och entreprenörer i bygg- och anläggningsprojekt. Fokus på grundförstärkning (pålning), byggledning, tid & kostnad — med tydliga beslut och hög kvalitet.</p>
-      <div class="cta">
-        <a class="btn btn--primary" href="grundforstarkning.html">Läs om grundförstärkning</a>
-        <a class="btn" href="byggledning.html">Våra byggledartjänster</a>
-        <a class="btn" href="mailto:henrik.olof.olsson@gmail.com">henrik.olof.olsson@gmail.com</a>
-      </div>
-      <span class="badge">Kontakt: 070-885 55 79 • Henrik Olsson</span>
-    </div>
+<nav>
+  <a href="#hem">Hem</a>
+  <a href="#grundforstarkning">Grundförstärkning</a>
+  <a href="#byggledning">Byggledning</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
 
-    <aside class="hero-card" aria-label="Snabbfakta">
-      <div class="stat"><b>100%</b> <span>Kvalitet & ansvar</span></div>
-      <div class="stat"><b>24h</b> <span>Snabb återkoppling</span></div>
-      <div class="stat"><b>1–∞</b> <span>Uppdrag, små som stora</span></div>
-    </aside>
-  </section>
+<div class="hero" id="hem">
+  <h2>Konsulttjänster inom bygg och anläggning</h2>
+</div>
 
-  <!-- TJÄNSTER -->
-  <section class="section" aria-labelledby="svc">
-    <div class="heading">
-      <h2 id="svc">Tjänster</h2>
-      <a class="btn" href="kontakt.html">Begär kontakt →</a>
-    </div>
+<section id="grundforstarkning">
+  <h2>Grundförstärkning</h2>
+  <p>
+    Många äldre byggnader har skador på grund av sättningar, som kan bero på 
+    grundvattensänkning, tung trafik eller närliggande schakt- och byggarbeten. 
+    Ju tidigare en grundförstärkning utförs, desto lägre blir de slutliga kostnaderna.
+  </p>
+  <img src="img/adam-gavlak-lqWf-yoQztI-unsplash.jpg" alt="Grundförstärkning">
+  <p>
+    Vi erbjuder metoder som slagning av stålrörspåle, kohesionspåle (vingpåle) samt 
+    borrning av stålrörs- och stålkärnepålar. Arbetet utförs med moderna maskiner och 
+    professionella yrkesarbetare. Vi kan även göra kostnadsfria bedömningar på plats.
+  </p>
+</section>
 
-    <div class="grid">
-      <article class="card">
-        <h3>Grundförstärkning</h3>
-        <p>Stabilisering av mark och åtgärd av sättningar med pålning (stålrör, stålkärna m.fl.). Vi gör kostnadsfri platsbedömning.</p>
-        <a class="btn" href="grundforstarkning.html">Läs mer</a>
-      </article>
+<section id="byggledning">
+  <h2>Byggledning</h2>
+  <p>
+    Henrik Olsson har lång erfarenhet av projektledning och byggledning. Vi erbjuder 
+    praktiskt platsstöd, tidplanering, ekonomihantering, upphandling och koordinering 
+    mellan beställare och entreprenörer.
+  </p>
+  <img src="img/joylynn-goh-pW7GWoG50sY-unsplash.jpg" alt="Byggledning">
+</section>
 
-      <article class="card">
-        <h3>Byggledning</h3>
-        <p>Henrik Olsson leder produktion, planering, ekonomi och kvalitet. Ordning, tempo och tydlig samordning.</p>
-        <a class="btn" href="byggledning.html">Läs mer</a>
-      </article>
+<section id="bilder">
+  <h2>Intryck från arbeten</h2>
+  <img src="img/sara-kurfess-6NHyiqGlP1Q-unsplash.jpg" alt="Detalj">
+  <img src="img/belinda-fewings-XzUGDscp2SU-unsplash.jpg" alt="Byggnader">
+  <img src="img/killari-hotaru-LY8GGT3eJe0-unsplash.jpg" alt="Stadsmiljö">
+</section>
 
-      <article class="card">
-        <h3>Kostnadsuppskattningar</h3>
-        <p>Överslagskalkyler, mängdning och prognoser som underlag för beslut inför upphandling och produktion.</p>
-        <a class="btn" href="kontakt.html">Kontakta oss</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- VARFÖR VI -->
-  <section class="section" aria-labelledby="usp" style="margin-top:28px">
-    <div class="heading"><h2 id="usp">Varför välja Hokonsult?</h2></div>
-    <div class="features">
-      <div class="feature">
-        <h4>Erfarenhet i fält</h4>
-        <p>Praktisk byggledning nära produktion — vi löser hinder, håller tempo och säkerställer kvalitet.</p>
-      </div>
-      <div class="feature">
-        <h4>Kostnad & tid i fokus</h4>
-        <p>Tydliga tidplaner, prognoser och uppföljning. Beslut baserade på data, inte magkänsla.</p>
-      </div>
-      <div class="feature">
-        <h4>Trygghet & standard</h4>
-        <p>Arbete enligt svensk standard, dokumentation och säkerhet i första rummet.</p>
-      </div>
-    </div>
-  </section>
-</main>
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <p>Mail: <a href="mailto:henrik.olof.olsson@gmail.com">henrik.olof.olsson@gmail.com</a></p>
+  <p>Tel: <a href="tel:0708855579">070-885 55 79</a></p>
+</section>
 
 <footer>
-  <div class="foot">
-    <div>© 2025 Hokonsult — Henrik Olsson</div>
-    <div>Tel <a href="tel:+46708855579">070-885 55 79</a> • Mail <a href="mailto:henrik.olof.olsson@gmail.com">henrik.olof.olsson@gmail.com</a></div>
-  </div>
+  &copy; 2025 Hokonsult AB
 </footer>
-
-<a href="tel:+46708855579" class="call-btn">📞 Ring nu</a>
 
 </body>
 </html>
