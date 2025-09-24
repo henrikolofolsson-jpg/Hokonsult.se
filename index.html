@@ -1,61 +1,109 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Hokonsult – Byggledning & Konsulttjänster</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; color:#333; }
-    header { background:#004466; color:#fff; padding:40px 20px; text-align:center; }
-    header h1 { margin:0; font-size:2.2em; }
-    header p { margin:10px 0 0; font-size:1.1em; }
-    main { max-width:900px; margin:40px auto; padding:0 20px; }
-    section { background:#fff; margin-bottom:24px; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-    h2 { margin-top:0; color:#004466; }
-    ul { padding-left:20px; }
-    footer { background:#004466; color:#fff; text-align:center; padding:20px; font-size:0.9em; }
-    a { color:#004466; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hokonsult – Byggledning & Konsult</title>
+<style>
+  /* --- 90s / Win95 look --- */
+  :root{
+    --face:#dcdcdc; --light:#ffffff; --shadow:#808080; --dark:#000000; --accent:#0aa3ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#bfbfbf;font:16px/1.4 "Times New Roman", Georgia, serif;color:#111;}
+  .window{max-width:980px;margin:22px auto;background:var(--face);border:2px solid var(--dark);border-right-color:var(--light);border-bottom-color:var(--light);}
+  .titlebar{background:#003a91;color:#69f; padding:6px 10px; display:flex;align-items:center;gap:10px}
+  .titlebar h1{margin:0;color:#9ee6ff;font-weight:800;letter-spacing:1px;text-shadow:0 1px 0 #001d48;font-size:22px}
+  .titlebar .controls{margin-left:auto;display:flex;gap:6px}
+  .btn-ctl{width:18px;height:18px;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);background:#c0c0c0}
+  .menubar{background:#cfcfcf;border-top:2px solid var(--light);border-left:2px solid var(--light);border-right:2px solid var(--shadow);border-bottom:2px solid var(--shadow);padding:6px 10px;font-family:Arial, Helvetica, sans-serif}
+  .layout{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:14px}
+  .panel{background:#d9d9d9;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);padding:12px}
+  .nav a{display:block;margin:8px 0;padding:8px 10px;background:#d9d9d9;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);text-decoration:none;color:#000;font-weight:700;font-family:Arial}
+  .nav a:hover{filter:brightness(0.95)}
+  .hero{display:flex;gap:16px;align-items:center}
+  .globe{width:64px;height:64px;border-radius:50%;background:
+    radial-gradient(circle at 30% 35%, #0af 0 34px, #0072b1 35px 64px),
+    conic-gradient(#16c172 0 40%, #0af 0 100%);
+    border:2px solid var(--shadow)}
+  h2{margin:6px 0 10px;font-size:22px}
+  .service{display:flex;align-items:center;gap:12px;margin:10px 0;padding:12px;background:#e6e6e6;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark)}
+  .icon{width:46px;height:46px;display:grid;place-items:center;background:#00b7ff;border:2px solid var(--shadow)}
+  .service b{font-size:20px;font-family:Arial}
+  .grid{display:grid;grid-template-columns:1fr;gap:10px}
+  .footer{padding:10px;background:#cfcfcf;border-top:2px solid var(--light);border-left:2px solid var(--light);border-right:2px solid var(--shadow);border-bottom:2px solid var(--shadow);text-align:center;font-family:Arial}
+  .chip{display:inline-block;margin-top:6px;padding:3px 8px;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);background:#efefef;font:12px Arial}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Hokonsult</h1>
-    <p>Byggledning & konsult inom byggprojekt</p>
-  </header>
+  <div class="window">
+    <div class="titlebar">
+      <h1>HOKONSULT</h1>
+      <div class="controls"><div class="btn-ctl"></div><div class="btn-ctl"></div><div class="btn-ctl"></div></div>
+    </div>
+    <div class="menubar">File  Edit  View  Help</div>
 
-  <main>
-    <section>
-      <h2>Om oss</h2>
-      <p>
-        Hokonsult erbjuder professionell byggledning, kostnadsuppskattningar och
-        rådgivning för små och stora projekt. Vi stöttar beställare och entreprenörer
-        genom hela processen – från planering till färdig byggnation.
-      </p>
-    </section>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="panel nav">
+        <a href="#">Home</a>
+        <a href="#about">Om</a>
+        <a href="#services">Tjänster</a>
+        <a href="#contact">Kontakt</a>
+        <div class="chip">Org.nr: (fyll i)</div>
+      </aside>
 
-    <section>
-      <h2>Tjänster</h2>
-      <ul>
-        <li>Byggledning och projektstyrning</li>
-        <li>Kostnadsberäkningar och kalkyler</li>
-        <li>Konsultation vid upphandling</li>
-        <li>Kontroll av tidplaner och budget</li>
-        <li>Koordinering mellan beställare och entreprenör</li>
-      </ul>
-    </section>
+      <!-- MAIN -->
+      <main class="panel">
+        <div class="hero">
+          <div class="globe"></div>
+          <div>
+            <h2>Välkommen till Hokonsult</h2>
+            <p>Byggledning och konsultstöd för anläggnings- och byggprojekt. Vi hjälper beställare och entreprenörer från tidig kalkyl till färdig produktion.</p>
+          </div>
+        </div>
 
-    <section>
-      <h2>Kontakt</h2>
-      <p>
-        Vill du veta mer eller diskutera ditt projekt?<br>
-        Hör av dig till: <a href="mailto:info@hokonsult.se">info@hokonsult.se</a>
-      </p>
-    </section>
-  </main>
+        <section id="services" class="grid" style="margin-top:10px">
+          <div class="service">
+            <div class="icon">📋</div>
+            <div><b>Byggledning & platsstöd</b><br>Daglig styrning, mötesledning, samordning och uppföljning ute på plats.</div>
+          </div>
+          <div class="service">
+            <div class="icon">💸</div>
+            <div><b>Kostnadsuppskattning & kalkyl</b><br>Överslagskalkyler, mängdningar och budgetkontroll genom hela projektet.</div>
+          </div>
+          <div class="service">
+            <div class="icon">🧭</div>
+            <div><b>Tidplan & produktion</b><br>Planering (Gantt/Look-ahead), resurser, risk och prognos.</div>
+          </div>
+          <div class="service">
+            <div class="icon">📑</div>
+            <div><b>Upphandling & AF-stöd</b><br>Underlag, tekniska krav, utvärdering och kontraktstöd.</div>
+          </div>
+          <div class="service">
+            <div class="icon">🔎</div>
+            <div><b>Kontroll & egenkontroller</b><br>KMA, BAS-P/U-samverkan, besiktningar och relationshandlingar.</div>
+          </div>
+          <div class="service">
+            <div class="icon">🤝</div>
+            <div><b>Stakeholder & kommunikation</b><br>Kontakt med markägare, myndigheter och boende – tydlig och lugn dialog.</div>
+          </div>
+        </section>
 
-  <footer>
-    &copy; 2025 Hokonsult AB – Alla rättigheter förbehållna
-  </footer>
+        <section id="about" class="panel" style="margin-top:12px">
+          <h2>Om Hokonsult</h2>
+          <p>Praktiskt, jordnära och lösningsorienterat. Vi kliver in där det behövs – hela vägen eller på deluppdrag.</p>
+        </section>
+
+        <section id="contact" class="panel" style="margin-top:12px">
+          <h2>Kontakt</h2>
+          <p>E-post: <a href="mailto:info@hokonsult.se">info@hokonsult.se</a><br>
+             Telefon: <a href="tel:+46000000000">+46 (0)</a></p>
+        </section>
+      </main>
+    </div>
+
+    <div class="footer">© 2025 Hokonsult – Byggledning & Konsult</div>
+  </div>
 </body>
 </html>
