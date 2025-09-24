@@ -2,29 +2,28 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hokonsult – Hem</title>
 <style>
-:root{--face:#dcdcdc;--light:#fff;--shadow:#7f7f7f;--dark:#000;--bar:#0b3f91;--teal:#0aa3ff;}
+:root{--face:#dcdcdc;--light:#fff;--shadow:#7f7f7f;--dark:#000;--bar:#0b3f91;}
 *{box-sizing:border-box} body{margin:0;background:#bfbfbf;font:16px/1.45 "MS Sans Serif", Arial, sans-serif;color:#111;}
 .window{max-width:1060px;margin:18px auto;background:var(--face);border:2px solid var(--dark);border-right-color:var(--light);border-bottom-color:var(--light)}
-.title{display:flex;gap:10px;align-items:center;padding:8px 12px;background:var(--bar);color:#9ee6ff;font-weight:700;letter-spacing:.5px}
+.title{display:flex;gap:10px;align-items:center;padding:8px 12px;background:var(--bar);color:#9ee6ff;font-weight:700}
 .title .dot{width:18px;height:18px;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);background:#c0c0c0}
 .layout{display:grid;grid-template-columns:220px 1fr;gap:12px;padding:12px}
-.panel{background:#d9d9d9;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark)}
+.panel{background:#d9d9d9;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);padding:12px}
 .left{padding:12px}
 .nav a{display:block;margin:8px 0;padding:9px 12px;background:#e6e6e6;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);text-decoration:none;color:#000;font-weight:700}
 .nav a:hover{filter:brightness(.95)}
 .main{padding:14px}
-.hero{display:flex;gap:16px;align-items:center}
-.badge{display:inline-block;margin-top:8px;padding:6px 10px;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);background:#efefef}
-.grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
-.card{display:flex;align-items:center;gap:12px;padding:12px;background:#e6e6e6;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark)}
-.icon{width:46px;height:46px;display:grid;place-items:center;background:#00b7ff;border:2px solid var(--shadow);font-size:24px}
-.card a{font-weight:800;color:#000;text-decoration:none}
-.card a:hover{text-decoration:underline}
-.footer{padding:10px;background:#cfcfcf;border-top:2px solid var(--light);border-left:2px solid var(--light);border-right:2px solid var(--shadow);border-bottom:2px solid var(--shadow);text-align:center;font-size:13px}
 .h1{font-size:22px;margin:4px 0 6px}
+.cards{display:grid;gap:14px}
+.card{display:flex;gap:14px;align-items:center;text-decoration:none;color:#000;background:#e6e6e6;border:2px solid #000;box-shadow:4px 4px 0 #000;padding:14px}
+.card:hover{background:#d5d5d5}
+.icon{width:64px;height:64px;image-rendering:pixelated;border:2px solid var(--shadow);background:#00b7ff;display:grid;place-items:center}
+.footer{padding:10px;background:#cfcfcf;border-top:2px solid var(--light);border-left:2px solid var(--light);border-right:2px solid var(--shadow);border-bottom:2px solid var(--shadow);text-align:center;font-size:13px}
+.badge{display:inline-block;margin-top:8px;padding:6px 10px;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);background:#efefef}
 </style></head><body>
 <div class="window">
-  <div class="title"><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  <div class="title">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
     <div style="font-size:18px;font-weight:800;color:#bdf2ff">HOKONSULT</div>
     <div style="margin-left:auto;color:#d6f5ff;font-size:13px">
       Kontakt: <b>Henrik.olof.olsson@gmail.com</b> • <b>070-885 55 79</b>
@@ -45,37 +44,37 @@
 
     <!-- MAIN -->
     <main class="panel main">
-      <div class="hero">
-        <div style="width:64px;height:64px;border-radius:50%;background:
-          radial-gradient(circle at 30% 35%, #0af 0 34px, #0072b1 35px 64px),
-          conic-gradient(#16c172 0 40%, #0af 0 100%);border:2px solid #6b6b6b"></div>
-        <div>
-          <div class="h1">Byggledning & konsult – grund & anläggning</div>
-          <p>Hokonsult tillhandahåller konsulttjänster inom byggbranschen med fokus på grund- och anläggningsprojekt. Vi hjälper från tidig kalkyl till produktion och färdigställande.</p>
-        </div>
-      </div>
+      <div class="h1">Byggledning & konsult – grund & anläggning</div>
+      <p>Hokonsult tillhandahåller konsulttjänster inom byggbranschen med fokus på grund- och anläggningsprojekt. Från tidig kalkyl till produktion och färdigställande.</p>
 
-      <!-- Tjänsteknappar -->
-      <div class="grid">
-        <div class="card">
-          <div class="icon">🧱</div>
-          <div><a href="grundforstarkning.html">Grundförstärkning</a><br>
-            Stabilisering av mark och åtgärd av sättningsskador: pålning, injektering m.m. Kostnadsfri bedömning på plats.</div>
-        </div>
-        <div class="card">
-          <div class="icon">📋</div>
-          <div><a href="byggledning.html">Byggledning</a><br>
-            Praktiskt platsstöd, tidsplan, ekonomi, upphandling och koordinering mellan beställare och entreprenör.</div>
-        </div>
-        <div class="card">
-          <div class="icon">✉️</div>
-          <div><a href="kontakt.html">Kontakt</a><br>
-            Mail: <b>Henrik.olof.olsson@gmail.com</b> • Tel: <b>070-885 55 79</b></div>
-        </div>
+      <div class="cards">
+        <a class="card" href="grundforstarkning.html" aria-label="Till Grundförstärkning">
+          <img class="icon" src="img/retro-brick.gif" alt="">
+          <div>
+            <h3 style="margin:0">Grundförstärkning</h3>
+            <p style="margin:6px 0 0">Stabilisering av mark och åtgärd av sättningsskador: pålning m.m. Kostnadsfri bedömning på plats.</p>
+          </div>
+        </a>
+
+        <a class="card" href="byggledning.html" aria-label="Till Byggledning">
+          <img class="icon" src="img/retro-clipboard.gif" alt="">
+          <div>
+            <h3 style="margin:0">Byggledning</h3>
+            <p style="margin:6px 0 0">Praktiskt platsstöd, tidplan, ekonomi, upphandling och koordinering mellan beställare och entreprenör.</p>
+          </div>
+        </a>
+
+        <a class="card" href="kontakt.html" aria-label="Till Kontakt">
+          <img class="icon" src="img/retro-mail.gif" alt="">
+          <div>
+            <h3 style="margin:0">Kontakt</h3>
+            <p style="margin:6px 0 0">Mail: <b>Henrik.olof.olsson@gmail.com</b> • Tel: <b>070-885 55 79</b></p>
+          </div>
+        </a>
       </div>
     </main>
   </div>
 
-  <div class="footer">© 2025 Hokonsult — Byggledning & konsult. Mail: Henrik.olof.olsson@gmail.com • Tel: 070-885 55 79</div>
+  <div class="footer">© 2025 Hokonsult — Mail: Henrik.olof.olsson@gmail.com • Tel: 070-885 55 79</div>
 </div>
 </body></html>
