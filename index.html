@@ -3,7 +3,7 @@
 <title>Hokonsult – Hem</title>
 <style>
 :root{--face:#dcdcdc;--light:#fff;--shadow:#7f7f7f;--dark:#000;--bar:#0b3f91;}
-*{box-sizing:border-box} body{margin:0;background:#bfbfbf;font:16px/1.45 "MS Sans Serif", Arial, sans-serif;color:#111;}
+*{box-sizing:border-box} body{margin:0;background:#bfbfbf;font:16px/1.45 "MS Sans Serif", Arial, sans-serif;color:#111}
 .window{max-width:1060px;margin:18px auto;background:var(--face);border:2px solid var(--dark);border-right-color:var(--light);border-bottom-color:var(--light)}
 .title{display:flex;gap:10px;align-items:center;padding:8px 12px;background:var(--bar);color:#9ee6ff;font-weight:700}
 .title .dot{width:18px;height:18px;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);background:#c0c0c0}
@@ -17,10 +17,12 @@
 .cards{display:grid;gap:14px}
 .card{display:flex;gap:14px;align-items:center;text-decoration:none;color:#000;background:#e6e6e6;border:2px solid #000;box-shadow:4px 4px 0 #000;padding:14px}
 .card:hover{background:#d5d5d5}
-.icon{width:64px;height:64px;image-rendering:pixelated;border:2px solid var(--shadow);background:#00b7ff;display:grid;place-items:center}
+.icon{width:64px;height:64px;image-rendering:pixelated;border:2px solid var(--shadow);background:#00b7ff;display:block}
 .footer{padding:10px;background:#cfcfcf;border-top:2px solid var(--light);border-left:2px solid var(--light);border-right:2px solid var(--shadow);border-bottom:2px solid var(--shadow);text-align:center;font-size:13px}
 .badge{display:inline-block;margin-top:8px;padding:6px 10px;border:2px solid var(--light);border-right-color:var(--dark);border-bottom-color:var(--dark);background:#efefef}
-</style></head><body>
+</style>
+</head>
+<body>
 <div class="window">
   <div class="title">
     <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -31,7 +33,6 @@
   </div>
 
   <div class="layout">
-    <!-- SIDEBAR -->
     <aside class="panel left">
       <div class="nav">
         <a href="index.html">🏠 Hem</a>
@@ -42,30 +43,29 @@
       <div class="badge">Org.nr: (fyll i)</div>
     </aside>
 
-    <!-- MAIN -->
     <main class="panel main">
       <div class="h1">Byggledning & konsult – grund & anläggning</div>
       <p>Hokonsult tillhandahåller konsulttjänster inom byggbranschen med fokus på grund- och anläggningsprojekt. Från tidig kalkyl till produktion och färdigställande.</p>
 
       <div class="cards">
         <a class="card" href="grundforstarkning.html" aria-label="Till Grundförstärkning">
-          <img class="icon" src="img/retro-brick.gif" alt="">
+          <img class="icon" alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' fill='%2300b7ff'/><rect x='8' y='32' width='48' height='16' fill='%23a8341f'/><rect x='8' y='16' width='32' height='12' fill='%23c14a2c'/><rect x='26' y='8' width='18' height='10' fill='%23e06b3b'/></svg>">
           <div>
             <h3 style="margin:0">Grundförstärkning</h3>
-            <p style="margin:6px 0 0">Stabilisering av mark och åtgärd av sättningsskador: pålning m.m. Kostnadsfri bedömning på plats.</p>
+            <p style="margin:6px 0 0">Stabilisering av mark och åtgärd av sättningsskador med pålning. Kostnadsfri bedömning på plats.</p>
           </div>
         </a>
 
         <a class="card" href="byggledning.html" aria-label="Till Byggledning">
-          <img class="icon" src="img/retro-clipboard.gif" alt="">
+          <img class="icon" alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' fill='%2300b7ff'/><rect x='12' y='10' width='40' height='50' fill='%23fff'/><line x1='18' y1='22' x2='46' y2='22' stroke='%23000' stroke-width='2'/><line x1='18' y1='30' x2='46' y2='30' stroke='%23000' stroke-width='2'/><line x1='18' y1='38' x2='46' y2='38' stroke='%23000' stroke-width='2'/></svg>">
           <div>
             <h3 style="margin:0">Byggledning</h3>
-            <p style="margin:6px 0 0">Praktiskt platsstöd, tidplan, ekonomi, upphandling och koordinering mellan beställare och entreprenör.</p>
+            <p style="margin:6px 0 0">Platsstöd, tidplan, ekonomi, upphandling och samordning mellan beställare och entreprenör.</p>
           </div>
         </a>
 
         <a class="card" href="kontakt.html" aria-label="Till Kontakt">
-          <img class="icon" src="img/retro-mail.gif" alt="">
+          <img class="icon" alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' fill='%2300b7ff'/><rect x='8' y='18' width='48' height='28' fill='%23fff' stroke='%23000' stroke-width='2'/><polyline points='8,18 32,36 56,18' fill='none' stroke='%23000' stroke-width='2'/></svg>">
           <div>
             <h3 style="margin:0">Kontakt</h3>
             <p style="margin:6px 0 0">Mail: <b>Henrik.olof.olsson@gmail.com</b> • Tel: <b>070-885 55 79</b></p>
