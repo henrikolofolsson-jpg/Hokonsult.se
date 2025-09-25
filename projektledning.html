@@ -1,79 +1,163 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>HOKAB – Projektledning</title>
-<style>
-  :root{--ink:#0b1220;--line:#e9eef4;--red:#b90d1b;--card:rgba(255,255,255,.97)}
-  *{box-sizing:border-box} html,body{margin:0}
-  body{font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink)}
-  header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .wrap{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;gap:16px;align-items:center}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:900}.logo .mark{width:26px;height:26px;background:var(--red)}.logo .word b{color:var(--red)}
-  nav{margin-left:auto;display:flex;gap:10px}.btn{padding:10px 14px;border:1px solid var(--line);text-decoration:none;color:var(--ink)}.btn:hover{border-color:var(--red);color:var(--red)}
-  .full{position:relative;isolation:isolate;width:100vw;margin-inline:calc(50% - 50vw);min-height:52svh;display:grid;place-items:center;background:center/cover no-repeat}
-  .box{position:relative;z-index:1;max-width:1100px;width:100%;padding:0 20px}
-  .card{background:var(--card);border:1px solid var(--line);padding:24px;border-radius:0}
-  .section{max-width:1100px;margin:34px auto;padding:0 20px}
-  .panel{background:#fff;border:1px solid var(--line);padding:22px;border-radius:0}
-  .person{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
-  .person img{width:120px;height:120px;object-fit:cover;border:1px solid var(--line)}
-  .link{color:var(--red);text-decoration:none;border-bottom:1px solid #f1c1c5}
-  footer{border-top:1px solid var(--line);margin-top:40px}.foot{max-width:1100px;margin:0 auto;padding:18px 20px;color:#6b7280;display:flex;justify-content:space-between;flex-wrap:wrap}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projektledning – Hokonsult AB</title>
+  <style>
+    :root{
+      --ink:#0b1220;
+      --line:#e7ecf2;
+      --red:#b30000;
+      --green:#0f9d58;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+    .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .brand b{color:var(--red)}
+    nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:.15s}
+    .btn:hover{border-color:var(--red);color:var(--red)}
+    .btn--primary{background:var(--red);border-color:var(--red);color:#fff}
+    .btn--primary:hover{filter:brightness(1.05)}
+    .btn.active{background:var(--red);border-color:var(--red);color:#fff}
+
+    /* HERO */
+    .hero{
+      position:relative;
+      width:100%;
+      height:60vh;
+      background:url('george-huffman-dbQ_iXJf1n8-unsplash.jpg') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:rgba(0,0,0,.4);
+    }
+    .hero-content{
+      position:relative;
+      color:#fff;
+      text-align:center;
+      max-width:800px;
+      padding:20px;
+    }
+    .hero h1{font-size:40px;margin:0 0 10px}
+    .hero p{font-size:18px;margin:0}
+
+    /* CONTENT */
+    .section{max-width:1100px;margin:40px auto;padding:0 20px}
+    h2{margin:0 0 10px}
+    p{margin:0 0 10px;color:#2b3140}
+
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .panel{background:#fff;border:1px solid var(--line);padding:20px}
+
+    /* CONTACT CARDS */
+    .contacts{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+    .contact-card{
+      border:1px solid var(--line);
+      padding:20px;
+      display:flex;
+      gap:15px;
+      align-items:center;
+      background:#fafafa;
+    }
+    .contact-card img{
+      width:100px;height:100px;object-fit:cover;border:2px solid var(--red)
+    }
+    .contact-info b{font-size:18px;color:var(--ink)}
+    .contact-info p{margin:4px 0}
+    .contact-info a{color:var(--red);text-decoration:none}
+    .contact-info a:hover{text-decoration:underline}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--line);margin-top:40px}
+    .foot{max-width:1200px;margin:0 auto;padding:18px 20px;color:#667084;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid #dfe3ea}
+    .foot a:hover{color:var(--red);border-color:var(--red)}
+  </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="logo"><div class="mark"></div><div class="word">H<b>OKAB</b></div></div>
+    <div class="brand">HOKONSULT <b>AB</b></div>
     <nav>
       <a class="btn" href="index.html">Grundförstärkning</a>
-      <a class="btn" href="#kontakt">Kontakt</a>
+      <a class="btn active" href="projektledning.html">Projektledning</a>
+      <a class="btn btn--primary" href="#kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
-<section class="full" style="background-image:url('img/joylynn-goh-pW7GWoG50sY-unsplash.jpg');">
-  <div class="box">
-    <div class="card">
-      <h1>Projektledning & genomförande</h1>
-      <p>Vi leder projekt nära produktionen – från planering och upphandling till daglig styrning och överlämning. Fokus: tid, kostnad, kvalitet och säkra arbetsplatser. Raka besked och tempo i genomförandet.</p>
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Projektledning med ansvar och tempo</h1>
+    <p>Vi leder projekt från start till mål med fokus på tid, kvalitet och kostnad – alltid med praktisk byggbarhet i centrum.</p>
   </div>
 </section>
 
+<!-- CONTENT -->
 <section class="section">
-  <div class="panel">
-    <h2>Vad vi gör</h2>
-    <ul>
-      <li>Produktion- och tidplanering, bemanning och logistik</li>
-      <li>Ekonomi: kalkyl, prognos, ÄTA-uppföljning och månadsrapport</li>
-      <li>Upphandling & kontrakt, arbetsberedningar, riskhantering</li>
-      <li>Samordning mellan beställare, konsulter och entreprenörer</li>
-      <li>KMA & omgivningspåverkan (vibration, buller, egenkontroller)</li>
-      <li>Överlämning med relationsunderlag och driftsättning</li>
-    </ul>
-  </div>
-</section>
+  <h2>Vad innebär vår projektledning?</h2>
+  <p>På Hokonsult AB kombinerar vi teknisk kunskap med erfarenhet från byggproduktion. Vi tar rollen som din samarbetspartner i projekt där struktur, tempo och tydlighet är avgörande. Med närvaro på plats säkerställer vi att arbetet drivs framåt med full kontroll över tid, kostnad och kvalitet.</p>
 
-<section id="kontakt" class="section">
-  <div class="panel person">
-    <img src="img/20230922%20Protech%20Portrett%2001.jpg" alt="Henrik Olsson">
-    <div>
-      <h2>Kontakt – Projektledning</h2>
-      <p><b>Henrik Olsson</b>, projektledare och kundansvar</p>
-      <p>📧 <a class="link" href="mailto:Henrik@hokab.se">Henrik@hokab.se</a><br>
-         📞 <a class="link" href="tel:+46708855579">070-88 555 79</a></p>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel">
+      <h3>Vi erbjuder</h3>
+      <ul>
+        <li>Planering och styrning av bygg- och anläggningsprojekt</li>
+        <li>Kostnadsuppföljning och tidplanering</li>
+        <li>Kvalitetssäkring och arbetsmiljöansvar</li>
+        <li>Samordning mellan beställare, entreprenörer och konsulter</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Varför välja oss?</h3>
+      <p>Vi är inte enbart projektledare – vi är byggare med teknisk förståelse. När andra pratar teori arbetar vi praktiskt nära produktionen. Med tydliga beslut, erfarenhet och engagemang skapar vi trygghet för dig som beställare.</p>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
+<section id="kontakt" class="section">
+  <h2>Kontakta oss</h2>
+  <div class="contacts">
+    <div class="contact-card">
+      <img src="20230922 Protech Portrett 01.jpg" alt="Henrik Olsson">
+      <div class="contact-info">
+        <b>Henrik Olsson</b>
+        <p>Projektledning</p>
+        <p><a href="mailto:Henrik@hokab.se">Henrik@hokab.se</a></p>
+        <p><a href="tel:+46708855579">070-88 555 79</a></p>
+      </div>
+    </div>
+    <div class="contact-card">
+      <img src="Skärmavbild 2025-09-25 kl. 08.42.34.png" alt="Caleb Thomsen">
+      <div class="contact-info">
+        <b>Caleb Thomsen</b>
+        <p>Top Drill AB</p>
+        <p><a href="mailto:Caleb@Topdrill.se">Caleb@Topdrill.se</a></p>
+        <p><a href="tel:+46706030870">070-603 08 70</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="foot">
-    <div>© 2025 HOKAB</div>
-    <div><a class="link" href="mailto:Info@HOK.se">Info@HOK.se</a> · <a class="link" href="tel:+46708855579">070-885 55 79</a></div>
+    <div>© 2025 Hokonsult AB</div>
+    <div><a href="mailto:Info@hok.se">Info@hok.se</a> · <a href="tel:+46708855579">070-885 55 79</a></div>
   </div>
 </footer>
 
