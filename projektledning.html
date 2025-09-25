@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HOKAB – Projektledning</title>
 <style>
-  :root{
-    --ink:#0b1220;
-    --line:#e7ecf2;
-    --red:#b30000;
-  }
+  :root{ --ink:#0b1220; --line:#e7ecf2; --red:#b30000; }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
 
-  /* HEADER */
+  /* Top */
   header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
   .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .logo-box{width:26px;height:26px;background:var(--red)}
+  .logo-text{font-weight:800;letter-spacing:.5px;color:var(--ink)}
   nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
 
   .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:.15s}
@@ -24,12 +23,7 @@
   .btn--primary:hover{filter:brightness(1.05)}
   .btn.active{background:var(--red);border-color:var(--red);color:#fff}
 
-  /* LOGO */
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .logo-box{width:26px;height:26px;background:var(--red)}
-  .logo-text{font-weight:800;letter-spacing:.5px;color:var(--ink)}
-
-  /* FULL HERO */
+  /* Hero */
   .full{
     position:relative;isolation:isolate;
     width:100vw;margin-inline:calc(50% - 50vw);
@@ -41,29 +35,29 @@
     position:relative;z-index:2;background:#fff;border:1px solid var(--line);
     padding:24px;max-width:740px;width:92%;
   }
+
   h1,h2,h3{margin:0 0 12px}
   p{margin:0 0 12px}
 
-  /* CONTENT */
+  /* Content */
   .section{max-width:1000px;margin:40px auto;padding:0 20px}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .panel{background:#fff;border:1px solid var(--line);padding:20px}
   ul{margin-left:18px}
   li{margin:6px 0}
 
-  /* CONTACT CARDS */
+  /* Contact card */
   .card-person{text-align:center}
-  .card-person img{max-width:180px;width:100%;height:auto;border:1px solid var(--line);display:block;margin:0 auto 12px}
+  .card-person img{max-width:220px;width:100%;height:auto;border:1px solid var(--line);display:block;margin:0 auto 12px}
   .card-person a{color:var(--ink);text-decoration:none;border-bottom:1px solid #cfd6df}
   .card-person a:hover{color:var(--red);border-color:var(--red)}
 
-  /* FOOTER */
+  /* Footer */
   footer{border-top:1px solid var(--line);margin-top:40px}
   .foot{max-width:1200px;margin:0 auto;padding:18px 20px;color:#555;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   .foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid #ccc}
   .foot a:hover{color:var(--red);border-color:var(--red)}
 
-  /* MOBILE */
   @media (max-width:900px){
     .grid2{grid-template-columns:1fr}
     .full{min-height:50vh}
@@ -88,9 +82,9 @@
 <!-- HERO -->
 <section class="full" style="background-image:url('/img/robert-bye-_4c7erArmdg-unsplash.jpg');">
   <div class="hero-card">
-    <h1>Projektledning i bygg- och anläggningsprojekt</h1>
-    <p>Vi leder projekt från förstudie till överlämning – med tydliga beslut, tät uppföljning och stark närvaro ute i produktionen. Fokus: tid, kostnad, kvalitet och säkerhet.</p>
-    <p>Som oberoende partner organiserar vi rätt resurser, synkar entreprenörer och ser till att beslut tas när de behövs. Resultatet blir färre störningar, bättre styrning och trygg leverans.</p>
+    <h1>Projektledning som driver igenom</h1>
+    <p>Vi leder bygg- och anläggningsprojekt från förstudie till överlämning. Korta beslutsvägar, tät uppföljning och stark närvaro i produktionen gör att tid, kostnad och kvalitet hålls enligt plan.</p>
+    <p>Som oberoende partner organiserar vi resurser, synkar entreprenörer och säkrar att beslut tas när de behövs. Mindre friktion – tryggare leverans.</p>
     <a class="btn btn--primary" href="#kontakt">Kontakta oss</a>
   </div>
 </section>
@@ -107,7 +101,7 @@
         <li>Styrning: prognoser, ÄTA-hantering, månadsrapport</li>
         <li>Besiktningar, överlämning och efterkalkyl</li>
       </ul>
-      <p>Vi arbetar hands-on nära verksamheten – där besluten gör skillnad.</p>
+      <p>Vi jobbar hands-on nära verksamheten – där besluten gör skillnad.</p>
     </article>
 
     <article class="panel">
@@ -118,29 +112,31 @@
         <li><b>Helhetsgrepp</b> – från planering till driftsättning</li>
         <li><b>Starkt nätverk</b> av entreprenörer och specialister</li>
       </ul>
-      <p>Behöver du även grundförstärkning? Vi levererar kompletta lösningar tillsammans med Top Drill AB.</p>
+      <p>Behöver du även grundförstärkning? Vi levererar kompletta lösningar tillsammans med marknadsledande partners.</p>
     </article>
   </div>
 </section>
 
-<!-- KONTAKT -->
+<!-- KONTAKT – ENBART HENRIK -->
 <section id="kontakt" class="section">
-  <h2>Kontakta oss</h2>
+  <h2>Kontakt</h2>
   <div class="grid2">
     <div class="panel card-person">
-      <img src="/img/20230922 Protech Portrett 01.jpg" alt="Henrik Olsson" />
+      <!-- URL-kodat filnamn pga mellanslag -->
+      <img src="/img/20230922%20Protech%20Portrett%2001.jpg" alt="Henrik Olsson" />
       <h3>Henrik Olsson</h3>
       <p>Projektledning</p>
       <p><b>E-post:</b> <a href="mailto:henrik@hokab.se">henrik@hokab.se</a><br>
          <b>Tel:</b> <a href="tel:+46708855579">070-88 555 79</a></p>
     </div>
-
-    <div class="panel card-person">
-      <img src="/img/Skärmavbild 2025-09-25 kl. 08.42.34.png" alt="Caleb Thomsen" />
-      <h3>Caleb Thomsen</h3>
-      <p>Top Drill AB</p>
-      <p><b>E-post:</b> <a href="mailto:caleb@topdrill.se">caleb@topdrill.se</a><br>
-         <b>Tel:</b> <a href="tel:+46706030870">070-603 08 70</a></p>
+    <div class="panel">
+      <h3>Hur vi startar upp</h3>
+      <ol style="margin-left:18px">
+        <li>Snabb avstämning om mål, tid och ekonomi</li>
+        <li>Upplägg för organisation, rapportering och beslut</li>
+        <li>Kickoff med entreprenörer – fokus på byggbarhet och risk</li>
+      </ol>
+      <p style="margin-top:8px">Vill du ses på plats? Vi bokar gärna ett kostnadsfritt uppstartsmöte.</p>
     </div>
   </div>
 </section>
