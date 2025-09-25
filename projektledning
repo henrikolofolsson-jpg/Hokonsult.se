@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HOKAB – Projektledning</title>
+<style>
+  :root{--ink:#0b1220;--line:#ebeff4;--red:#b90d1b;--card:rgba(255,255,255,.97);--tint:rgba(0,0,0,.12)}
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink)}
+  header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .wrap{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;gap:16px;align-items:center}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:900}.logo .mark{width:26px;height:26px;background:var(--red)}.logo .word b{color:var(--red)}
+  nav{margin-left:auto;display:flex;gap:10px}.btn{padding:10px 14px;border:1px solid var(--line);text-decoration:none;color:var(--ink)}.btn:hover{border-color:var(--red);color:var(--red)}
+  .full{position:relative;isolation:isolate;width:100vw;margin-inline:calc(50% - 50vw);min-height:52svh;display:grid;place-items:center;background:center/cover no-repeat}
+  .full::after{content:"";position:absolute;inset:0;background:var(--tint)}
+  .box{position:relative;z-index:1;max-width:1100px;width:100%;padding:0 20px}
+  .card{background:var(--card);border:1px solid var(--line);padding:24px;border-radius:0}
+  .section{max-width:1100px;margin:34px auto;padding:0 20px}
+  .panel{background:#fff;border:1px solid var(--line);padding:22px;border-radius:0}
+  .person{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+  .person img{width:120px;height:120px;object-fit:cover;border:1px solid var(--line)}
+  .link{color:var(--red);text-decoration:none;border-bottom:1px solid #f1c1c5}
+  footer{border-top:1px solid var(--line);margin-top:40px}.foot{max-width:1100px;margin:0 auto;padding:18px 20px;color:#6b7280;display:flex;justify-content:space-between;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo"><div class="mark"></div><div class="word">H<b>OKAB</b></div></div>
+    <nav>
+      <a class="btn" href="index.html">Grundförstärkning</a>
+      <a class="btn" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<section class="full" style="background-image:url('img/joylynn-goh-pW7GWoG50sY-unsplash.jpeg');">
+  <div class="box">
+    <div class="card">
+      <h1>Projektledning & genomförande</h1>
+      <p>Vi leder projekt nära produktionen – från planering och upphandling till daglig styrning och överlämning. Fokus: tid, kostnad, kvalitet och säkra arbetsplatser. Raka besked och tempo i genomförandet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="panel">
+    <h2>Vad vi gör</h2>
+    <ul>
+      <li>Produktion- och tidplanering, bemanning och logistik</li>
+      <li>Ekonomi: kalkyl, prognos, ÄTA-uppföljning, månadsrapport</li>
+      <li>Upphandling & kontrakt, arbetsberedningar, riskhantering</li>
+      <li>Samordning mellan beställare, konsulter och entreprenörer</li>
+      <li>KMA & omgivningspåverkan (vibration, buller, egenkontroller)</li>
+      <li>Överlämning: relationsunderlag och driftsättning</li>
+    </ul>
+  </div>
+</section>
+
+<section id="kontakt" class="section">
+  <div class="panel person">
+    <img src="img/20230922%20Protech%20Portrett%2001.jpg" alt="Henrik Olsson">
+    <div>
+      <h2>Kontakt – Projektledning</h2>
+      <p><b>Henrik Olsson</b>, projektledare och kundansvar</p>
+      <p>📧 <a class="link" href="mailto:Henrik@hokab.se">Henrik@hokab.se</a><br>
+         📞 <a class="link" href="tel:+46708855579">070-88 555 79</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>© 2025 HOKAB</div>
+    <div><a class="link" href="mailto:Info@HOK.se">Info@HOK.se</a> · <a class="link" href="tel:+46708855579">070-885 55 79</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
