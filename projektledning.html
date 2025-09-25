@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HOKAB – Projektledning</title>
 <style>
   :root{
-    --ink:#0b1220; 
+    --ink:#0b1220;
     --line:#e7ecf2;
     --red:#b30000;
   }
@@ -29,20 +29,17 @@
   .logo-box{width:26px;height:26px;background:var(--red)}
   .logo-text{font-weight:800;letter-spacing:.5px;color:var(--ink)}
 
-  /* HERO */
+  /* FULL HERO */
   .full{
     position:relative;isolation:isolate;
     width:100vw;margin-inline:calc(50% - 50vw);
     min-height:60vh;display:grid;place-items:center;
     background-position:center;background-size:cover;background-repeat:no-repeat;
   }
-  .full::after{
-    content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);
-  }
+  .full::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.20);} /* svag dimma */
   .hero-card{
-    position:relative;z-index:2;
-    background:#fff;padding:24px;border:1px solid var(--line);
-    max-width:700px;width:90%;
+    position:relative;z-index:2;background:#fff;border:1px solid var(--line);
+    padding:24px;max-width:740px;width:92%;
   }
   h1,h2,h3{margin:0 0 12px}
   p{margin:0 0 12px}
@@ -51,6 +48,14 @@
   .section{max-width:1000px;margin:40px auto;padding:0 20px}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .panel{background:#fff;border:1px solid var(--line);padding:20px}
+  ul{margin-left:18px}
+  li{margin:6px 0}
+
+  /* CONTACT CARDS */
+  .card-person{text-align:center}
+  .card-person img{max-width:180px;width:100%;height:auto;border:1px solid var(--line);display:block;margin:0 auto 12px}
+  .card-person a{color:var(--ink);text-decoration:none;border-bottom:1px solid #cfd6df}
+  .card-person a:hover{color:var(--red);border-color:var(--red)}
 
   /* FOOTER */
   footer{border-top:1px solid var(--line);margin-top:40px}
@@ -59,7 +64,7 @@
   .foot a:hover{color:var(--red);border-color:var(--red)}
 
   /* MOBILE */
-  @media(max-width:900px){
+  @media (max-width:900px){
     .grid2{grid-template-columns:1fr}
     .full{min-height:50vh}
   }
@@ -69,7 +74,7 @@
 
 <header>
   <div class="wrap">
-    <a href="index.html" class="logo">
+    <a href="index.html" class="logo" aria-label="HOKAB">
       <span class="logo-box"></span><span class="logo-text">HOKAB</span>
     </a>
     <nav>
@@ -81,36 +86,39 @@
 </header>
 
 <!-- HERO -->
-<section class="full" style="background-image:url('img/robert-bye-_4c7erArmdg-unsplash.jpg');">
+<section class="full" style="background-image:url('/img/robert-bye-_4c7erArmdg-unsplash.jpg');">
   <div class="hero-card">
     <h1>Projektledning i bygg- och anläggningsprojekt</h1>
-    <p>Vi driver projekt från start till mål – med fokus på kvalitet, ekonomi och tid. Hos oss får du en erfaren ledning som skapar trygghet i alla faser av byggprocessen.</p>
+    <p>Vi leder projekt från förstudie till överlämning – med tydliga beslut, tät uppföljning och stark närvaro ute i produktionen. Fokus: tid, kostnad, kvalitet och säkerhet.</p>
+    <p>Som oberoende partner organiserar vi rätt resurser, synkar entreprenörer och ser till att beslut tas när de behövs. Resultatet blir färre störningar, bättre styrning och trygg leverans.</p>
     <a class="btn btn--primary" href="#kontakt">Kontakta oss</a>
   </div>
 </section>
 
-<!-- CONTENT -->
+<!-- INNEHÅLL -->
 <section class="section">
   <div class="grid2">
     <article class="panel">
-      <h2>Vår roll i projektledning</h2>
-      <p>Vi är med från planering till färdigställande och samordnar alla aktörer i projektet. Med tydliga beslut, noggrann uppföljning och hög närvaro på plats säkerställer vi att ditt projekt blir effektivt och lönsamt.</p>
+      <h2>Det här gör vi</h2>
       <ul>
-        <li>Upprättar tidplaner och ekonomiska prognoser</li>
-        <li>Samordnar entreprenörer och konsulter</li>
-        <li>Säkerställer kvalitet och arbetsmiljö</li>
-        <li>Ger dig kontinuerlig rapportering och uppföljning</li>
+        <li>Planering: målbild, tidplan, kalkyl och risk</li>
+        <li>Upphandling och kontraktstöd</li>
+        <li>Ledning på plats: produktion, samordning, arbetsmiljö</li>
+        <li>Styrning: prognoser, ÄTA-hantering, månadsrapport</li>
+        <li>Besiktningar, överlämning och efterkalkyl</li>
       </ul>
+      <p>Vi arbetar hands-on nära verksamheten – där besluten gör skillnad.</p>
     </article>
+
     <article class="panel">
-      <h2>Varför välja HOKAB?</h2>
-      <p>Med lång erfarenhet inom bygg- och anläggningssektorn vet vi vad som krävs för att projekt ska lyckas. Vi kombinerar teknisk kunskap med praktisk byggbarhet och ser till att dina resurser används optimalt.</p>
+      <h2>Varför HOKAB?</h2>
       <ul>
-        <li>Engagerad ledning nära produktionen</li>
-        <li>Raka besked och korta beslutsvägar</li>
-        <li>Stort nätverk av samarbetspartners</li>
-        <li>Fokus på helhetslösningar</li>
+        <li><b>Raka besked</b> och korta beslutsvägar</li>
+        <li><b>Byggbarhet i fokus</b> – praktisk erfarenhet + teknisk höjd</li>
+        <li><b>Helhetsgrepp</b> – från planering till driftsättning</li>
+        <li><b>Starkt nätverk</b> av entreprenörer och specialister</li>
       </ul>
+      <p>Behöver du även grundförstärkning? Vi levererar kompletta lösningar tillsammans med Top Drill AB.</p>
     </article>
   </div>
 </section>
@@ -119,19 +127,20 @@
 <section id="kontakt" class="section">
   <h2>Kontakta oss</h2>
   <div class="grid2">
-    <div class="panel" style="text-align:center">
-      <img src="img/20230922 Protech Portrett 01.jpg" alt="Henrik Olsson" style="max-width:160px;border-radius:4px;margin-bottom:10px">
+    <div class="panel card-person">
+      <img src="/img/20230922 Protech Portrett 01.jpg" alt="Henrik Olsson" />
       <h3>Henrik Olsson</h3>
       <p>Projektledning</p>
       <p><b>E-post:</b> <a href="mailto:henrik@hokab.se">henrik@hokab.se</a><br>
-      <b>Tel:</b> <a href="tel:+46708855579">070-88 555 79</a></p>
+         <b>Tel:</b> <a href="tel:+46708855579">070-88 555 79</a></p>
     </div>
-    <div class="panel" style="text-align:center">
-      <img src="img/Skärmavbild 2025-09-25 kl. 08.42.34.png" alt="Caleb Thomsen" style="max-width:160px;border-radius:4px;margin-bottom:10px">
+
+    <div class="panel card-person">
+      <img src="/img/Skärmavbild 2025-09-25 kl. 08.42.34.png" alt="Caleb Thomsen" />
       <h3>Caleb Thomsen</h3>
       <p>Top Drill AB</p>
       <p><b>E-post:</b> <a href="mailto:caleb@topdrill.se">caleb@topdrill.se</a><br>
-      <b>Tel:</b> <a href="tel:+46706030870">070-603 08 70</a></p>
+         <b>Tel:</b> <a href="tel:+46706030870">070-603 08 70</a></p>
     </div>
   </div>
 </section>
