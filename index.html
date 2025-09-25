@@ -3,80 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hokonsult AB – Grundförstärkning & Projektledning</title>
+<title>HOKAB – Grundförstärkning & Projektledning i Norden</title>
 <style>
   :root{
-    --ink:#0b1220; --muted:#5b6473; --line:#e7ecf2;
-    --panel:#ffffff; --tint:rgba(0,0,0,.45);
-    --green:#0f9d58; --red:#e53935;
+    --ink:#0b1220; --muted:#5b6473; --line:#ebeff4;
+    --white:#ffffff; --panel:#ffffff;
+    --tint:rgba(0,0,0,.28);          /* svagare dimma för mer “tryck” i bilderna */
+    --red:#b90d1b; /* blodröd logotyp/primär */
+    --green:#138a60; /* accentknapp */
   }
-  *{box-sizing:border-box} html,body{margin:0}
-  body{font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
 
-  /* HEADER */
-  header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px}
-  .brand{font-weight:800;letter-spacing:.2px}
-  .brand b{color:var(--green)}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font:16px/1.7 Inter,ui-sans-serif,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+
+  /* ====== HEADER ====== */
+  header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:18px}
+  /* Enkel “logotyp” i blodrött – HOKAB */
+  .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.5px}
+  .logo .mark{width:26px;height:26px;background:var(--red)}
+  .logo .word{color:var(--ink)}
+  .logo .word b{color:var(--red)}
   nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;text-decoration:none;color:var(--ink);transition:.15s}
-  .btn:hover{border-color:var(--green);color:var(--green)}
-  .btn--primary{background:var(--green);border-color:var(--green);color:#fff}
+  .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;transition:.15s}
+  .btn:hover{border-color:var(--red);color:var(--red)}
+  .btn--primary{background:var(--red);border-color:var(--red);color:#fff}
   .btn--primary:hover{filter:brightness(1.05)}
 
-  /* FULL-BLEED SECTIONS */
+  /* ====== FULL-BLEED SEKTIONER ====== */
   .full{
-  position: relative;
-  isolation: isolate;
-
-  width: 100vw;
-  margin-inline: calc(50% - 50vw);
-
-  min-height: 65svh;
-  display: grid;
-  place-items: center;
-
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.full::after{
-  content:"";
-  position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.40));
-}
-  .card{
-    background:rgba(255,255,255,.92); backdrop-filter:blur(6px);
-    border:1px solid var(--line); border-radius:16px; padding:20px;
+    position:relative; isolation:isolate;
+    width:100vw; margin-inline:calc(50% - 50vw);
+    min-height:64svh; display:grid; place-items:center;
+    background-position:center center; background-size:cover; background-repeat:no-repeat;
   }
-  h1,h2{margin:0 0 10px}
-  p{margin:0 0 10px; color:#2b3140}
+  .full::after{content:"";position:absolute;inset:0;background:var(--tint);} /* svag ton */
+  .box{position:relative;z-index:1;max-width:1200px;width:100%;padding:0 20px}
 
-  /* CONTENT */
-  .section{max-width:1000px;margin:32px auto;padding:0 20px}
-  .lead{font-size:18px;color:#394153}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
-  ul{margin:8px 0 0 18px}
-  li{margin:6px 0}
+  /* ====== KORT / PANELER (fyrkantiga) ====== */
+  .card,.panel{background:rgba(255,255,255,.96);border:1px solid var(--line);padding:22px;border-radius:0} /* INGA avrundningar */
+  .shadow{box-shadow:0 8px 24px rgba(0,0,0,.08)}
+  h1,h2,h3{margin:0 0 10px}
+  p{margin:0 0 12px;color:#2e3442}
 
-  /* FOOTER */
+  /* ====== GRID ====== */
+  .section{max-width:1200px;margin:34px auto;padding:0 20px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+  /* ====== CTA/LÄNKAR ====== */
+  .link{color:var(--red);text-decoration:none;border-bottom:1px solid #f1c1c5}
+  .link:hover{border-color:var(--red)}
+
+  /* ====== TEAM-KORT ====== */
+  .person{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+  .person img{width:120px;height:120px;object-fit:cover;border:1px solid var(--line);background:#fff}
+
+  /* ====== FOOTER ====== */
   footer{border-top:1px solid var(--line);margin-top:40px}
-  .foot{max-width:1200px;margin:0 auto;padding:18px 20px;color:#667084;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  .foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid #dfe3ea}
-  .foot a:hover{color:var(--green);border-color:var(--green)}
+  .foot{max-width:1200px;margin:0 auto;padding:18px 20px;color:#6b7280;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
-  /* MOBILE */
-  @media (max-width:900px){ .grid2{grid-template-columns:1fr} .full{min-height:56vh} }
+  /* ====== MOBIL ====== */
+  @media (max-width:980px){ .grid-2{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr} .full{min-height:56svh} .person{grid-template-columns:96px 1fr} .person img{width:96px;height:96px} }
 
-  /* Call on mobile */
-  .call-btn{
-    position:fixed;right:16px;bottom:16px;z-index:40;
-    background:var(--red);color:#fff;font-weight:700;
-    padding:12px 16px;border-radius:12px;border:1px solid #b12a2a;
-    box-shadow:0 12px 26px rgba(0,0,0,.35);text-decoration:none
-  }
+  /* Flytande ringknapp mobil */
+  .call-btn{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--green);color:#fff;padding:12px 16px;border:1px solid #0e6b4b;text-decoration:none;box-shadow:0 12px 26px rgba(0,0,0,.3)}
   @media (min-width:721px){.call-btn{display:none}}
 </style>
 </head>
@@ -84,89 +76,93 @@
 
 <header>
   <div class="wrap">
-    <div class="brand">HOKONSULT <b>AB</b></div>
+    <div class="logo">
+      <div class="mark"></div><div class="word">H<b>OKAB</b></div>
+    </div>
     <nav>
       <a class="btn" href="#hem">Hem</a>
-      <a class="btn" href="#grundforstarkning">Grundförstärkning</a>
-      <a class="btn" href="#Projektledning">Projektledning</a>
+      <a class="btn" href="#grund">Grundförstärkning</a>
+      <a class="btn" href="#proj">Projektledning</a>
       <a class="btn btn--primary" href="#kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO – HEL BAKGRUND -->
-<section id="hem" class="full" style="background-image:url('img/adam-gavlak-lqWf-yoQztI-unsplash.jpg');">
+<!-- HERO – företagspresentation + två fokusboxar -->
+<section id="hem" class="full" style="background-image:url('img/adam-gavlak-lqWf-yoQztI-unsplash.jpeg');">
   <div class="box">
-    <div class="card">
-      <h1>Projektledning & grundförstärkning – helhetslösningar som håller</h1>
-      <p class="lead">Vi utför grundförstärkningar om erat hus har börjat sätta sig. Vi kommer kostnadsfritt ut ger er teknisk rådgivning på plats. Snabb platsbedömning, raka beslut och leverans utan överraskningar.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
-        <a class="btn btn--primary" href="#grundforstarkning">Läs om grundförstärkning</a>
-        <a class="btn" href="#Projektledning">Våra Projektledningstjänster</a>
+    <div class="grid-2">
+      <div class="card shadow">
+        <h1>HOKAB – Grundförstärkning & Projektledning i Norden</h1>
+        <p>Vi är ett teknik- och genomförandeföretag som levererar stabila grunder och stabila projekt. HOKAB tar ansvar från platsbedömning och metodval till produktion, kontroll och dokumentation – med fokus på tid, kostnad och kvalitet.</p>
+        <p><b>Vi verkar i hela Norden</b> och samarbetar operativt med <b>Top Drill AB</b> – ett av Sveriges största specialistbolag inom grundläggningsentreprenader. Inga uppdrag är för stora eller komplexa.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn--primary" href="#grund">Läs om Grundförstärkning</a>
+          <a class="btn" href="#proj">Läs om Projektledning</a>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Grundförstärkning</h3>
+          <p>Åtgärder vid sättningar i befintliga byggnader, industri och infrastruktur. Pålning med stålrör/ stålkärna, borrade och slagna system – anpassat för stadsmiljö och känsliga objekt.</p>
+          <a class="link" href="#grund">Till tjänsten →</a>
+        </div>
+        <div class="card">
+          <h3>Projektledning</h3>
+          <p>Praktisk ledning nära produktionen: tidplan, ekonomi, upphandling och samordning. Raka besked och tempo i genomförandet.</p>
+          <a class="link" href="#proj">Till tjänsten →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GRUNDFÖRSTÄRKNING – HEL BAKGRUND MED MER TEXT UNDER -->
-<section id="grundforstarkning" class="full" style="background-image:url('img/shawn-mcnulty-berMrRj8wPI-unsplash.jpg');">
+<!-- GRUNDFÖRSTÄRKNING – hero -->
+<section id="grund" class="full" style="background-image:url('img/shawn-mcnulty-berMrRj8wPI-unsplash.jpeg');">
   <div class="box">
-    <div class="card">
+    <div class="card shadow">
       <h2>Grundförstärkning vid sättningar</h2>
-      <p>Sprickor i väggar, tröga dörrar/fönster, lutande golv? Vi stabiliserar byggnader med pålning och relaterade metoder – tryggt och effektivt.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
-        <a class="btn btn--primary" href="#gf-text">Läs mer</a>
+      <p>Sprickor i vägg, lutande golv eller tröga dörrar? Vi stabiliserar och återställer bärighet med pålningslösningar som tål krävande stadsmiljöer och känsliga objekt.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn--primary" href="#gf-innehall">Hur vi arbetar</a>
         <a class="btn" href="#kontakt">Boka platsbedömning</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="gf-text" class="section">
-  <div class="grid2">
+<!-- GRUNDFÖRSTÄRKNING – innehåll -->
+<section id="gf-innehall" class="section">
+  <div class="grid-2">
     <article class="panel">
-      <h3>När behövs grundförstärkning?</h3>
-      <p>Du kan behöva åtgärd om du märker:</p>
+      <h3>När behövs åtgärd?</h3>
       <ul>
         <li>Sprickor i vägg, golv eller grundmur</li>
-        <li>Dörrar/fönster som kärvar eller kilas</li>
-        <li>Lutande eller ojämna golv</li>
-        <li>Synliga sättningar efter schakt, pålning eller grundvattensänkning</li>
+        <li>Fönster/dörrar kärvar, lutande/ojämna golv</li>
+        <li>Påverkad omgivning efter schakt, pålning eller grundvattensänkning</li>
       </ul>
-      <p class="lead" style="margin-top:8px">Ju tidigare åtgärd, desto lägre slutkostnad och mindre följdskador.</p>
+      <p><b>Vår process:</b> kostnadsfri platsbedömning → metodval → produktionsplan → genomförande → slutkontroll & dokumentation.</p>
     </article>
-
     <article class="panel">
-      <h3>Metoder vi använder</h3>
+      <h3>Metoder & kapacitet</h3>
       <ul>
-        <li><b>Slagning av stålrörspåle</b> – kostnadseffektiv, låga vibrationer. Vanlig vid förstärkning av befintliga byggnader.</li>
-        <li><b>Slagning av kohesionspåle (vingpåle)</b> – för stora lerdjup där stödpålning till berg inte är rimlig. Levereras med små maskiner, bra i trånga miljöer.</li>
-        <li><b>Borrad pålning</b> – stålrörspåle, injekteringspåle och stålkärnepåle. Säkert ned till friskt berg, fungerar där hinder förekommer.</li>
-        <li><b>Stålkärnepålning</b> – stålkärnor monteras i förborrade rör; kan göras spetsburen (foderrör till berg) eller mantelburen (gjuts fast i berg). Hanterar både tryck och drag.</li>
-        <li><b>Kärnborrad stålrörspåle/-kärnepåle</b> – för känsliga miljöer där slående borrning inte tillåts; mycket god rakhet och minimal risk för kontamination.</li>
+        <li><b>Slagna stålrörspålar</b> – kostnadseffektivt, låga vibrationer för tät bebyggelse</li>
+        <li><b>Kohesionspålar / vingpålar</b> – vid stora lerdjup, maskiner för trånga lägen</li>
+        <li><b>Borrade system</b> – stålrör, stålkärna, injekteringspålar; säker ansättning i friskt berg</li>
+        <li><b>Precision i känslig miljö</b> – metoder för kulturmiljö och driftkritiska objekt</li>
       </ul>
+      <p>Genom partnerskapet med <b>Top Drill AB</b> mobiliserar vi rätt maskinpark och resurser i hela Norden.</p>
     </article>
   </div>
-
-  <article class="panel" style="margin-top:20px">
-    <h3>Varför Hokonsult?</h3>
-    <ul>
-      <li><b>Erfarenhet</b> – En blandning av geotekniska konstruktörer, ingenjörer och proffsiga yrkesarbetare har vi över 100 års erfarenhet.</li>
-      <li><b>Helhetslösning</b> – Kostnadsfri platsbesiktning och geoteknisk bedömning till metodval, genomförande och dokumentation.</li>
-      <li><b>Byggbarhet</b> – vi planerar för verklig byggbarhet och med svensk arbetskraft.</li>
-      <li><b>Tid & kostnad i fokus</b> – tydliga kalkyler, prognoser och uppföljning. Inga överraskningar.</li>
-      <li><b>Svensk standard</b> – arbete och rapportering enligt gällande normer och krav.</li>
-    </ul>
-  </article>
 </section>
 
-<!-- Projektledning – HEL BAKGRUND -->
-<section id="Projektledning" class="full" style="background-image:url('img/joylynn-goh-pW7GWoG50sY-unsplash.jpg');">
+<!-- PROJEKTLEDNING – hero -->
+<section id="proj" class="full" style="background-image:url('img/joylynn-goh-pW7GWoG50sY-unsplash.jpeg');">
   <div class="box">
-    <div class="card">
-      <h2>Projektledning </h2>
-      <p>Henrik Olsson leder produktion nära verksamheten – tidplan, ekonomi, kvalitet och samordning. Raka besked och tempo i genomförandet.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
+    <div class="card shadow">
+      <h2>Projektledning & genomförande</h2>
+      <p>Vi leder produktion nära verksamheten – från tidplan och ekonomi till upphandling, arbetsberedning och samordning. Målet är alltid störningsfri drift och noll överraskningar.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn btn--primary" href="#kontakt">Kontakta oss</a>
         <a class="btn" href="tel:+46708855579">Ring 070-885 55 79</a>
       </div>
@@ -174,27 +170,39 @@
   </div>
 </section>
 
-<!-- LITEN BILDSEKTION / STÄMNING -->
+<!-- STÄMNINGSBILD / REFERENSYTA -->
 <section class="section">
-  <div class="grid2">
+  <div class="grid-2">
     <div class="panel">
       <h3>Stad & kulturmiljö</h3>
-      <p>Vi arbetar ofta i känsliga miljöer där hänsyn till omgivning och drift är avgörande. Metodval och logistik anpassas för minimala störningar.</p>
+      <p>Vi planerar för minimal påverkan i känsliga miljöer – logistik, vibrationskrav och omgivningspåverkan är integrerade i vår metodik.</p>
     </div>
-    <div class="panel" style="background:url('img/belinda-fewings-XzUGDscp2SU-unsplash.jpg') center/cover; min-height:220px"></div>
+    <div class="panel" style="background:url('img/belinda-fewings-XzUGDscp2SU-unsplash.jpeg') center/cover; min-height:220px"></div>
   </div>
 </section>
 
-<!-- KONTAKT -->
-<section id="kontakt" class="full" style="background-image:url('img/sara-kurfess-6NHyiqGlP1Q-unsplash.jpg');">
-  <div class="box">
-    <div class="card">
-      <h2>Kontakta oss</h2>
-      <p>Vi återkopplar snabbt med ett första förslag och tidsplan.</p>
-      <p><b>E-post:</b> <a href="mailto:Info@hok.se">Info@hok.se</a> &nbsp; • &nbsp; <b>Tel:</b> <a href="tel:+46708855579">070-885 55 79</a></p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
-        <a class="btn btn--primary" href="mailto:Info@HOK.se">Maila nu</a>
-        <a class="btn" href="tel:+46708855579">Ring nu</a>
+<!-- KONTAKT – två personer -->
+<section id="kontakt" class="section">
+  <div class="grid-2">
+    <div class="panel person shadow">
+      <!-- HENRIK -->
+      <img src="img/20230922%20Protech%20Portrett%2001.jpg" alt="Henrik Olsson">
+      <div>
+        <h3>Henrik Olsson</h3>
+        <p>Projektledning & kundansvar</p>
+        <p>📧 <a class="link" href="mailto:Henrik@hokab.se">Henrik@hokab.se</a><br>
+           📞 <a class="link" href="tel:+46708855579">070-88 555 79</a></p>
+      </div>
+    </div>
+
+    <div class="panel person shadow">
+      <!-- CALEB -->
+      <img src="img/Ska%CC%88rmavbild%202025-09-25%20kl.%2008.42.34.png" alt="Caleb Thomsen">
+      <div>
+        <h3>Caleb Thomsen (Top Drill AB)</h3>
+        <p>Grundläggning & produktion</p>
+        <p>📧 <a class="link" href="mailto:Caleb@Topdrill.se">Caleb@Topdrill.se</a><br>
+           📞 <a class="link" href="tel:+46706030870">070-603 08 70</a></p>
       </div>
     </div>
   </div>
@@ -202,8 +210,8 @@
 
 <footer>
   <div class="foot">
-    <div>© 2025 Hokonsult AB </div>
-    <div><a href="mailto:Info@HOK.se">Info@hok.se</a> · <a href="tel:+46708855579">070-885 55 79</a></div>
+    <div>© 2025 HOKAB — Grundförstärkning & Projektledning</div>
+    <div><a class="link" href="mailto:Info@HOK.se">Info@HOK.se</a> · <a class="link" href="tel:+46708855579">070-885 55 79</a></div>
   </div>
 </footer>
 
