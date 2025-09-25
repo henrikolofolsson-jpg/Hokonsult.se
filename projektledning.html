@@ -2,144 +2,117 @@
 <html lang="sv">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>HOKAB – Projektledning</title>
 <style>
-  :root{ --ink:#0b1220; --line:#e7ecf2; --red:#b30000; }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
-
-  /* HEADER */
-  header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
-  .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .logo-box{width:26px;height:26px;background:var(--red)}
-  .logo-text{font-weight:800;letter-spacing:.5px;color:var(--ink)}
-  nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:.15s}
-  .btn:hover{border-color:var(--red);color:var(--red)}
-  .btn--primary{background:var(--red);border-color:var(--red);color:#fff}
-  .btn--primary:hover{filter:brightness(1.05)}
-  .btn.active{background:var(--red);border-color:var(--red);color:#fff}
-
-  /* FULL HERO med .jpg + .jpeg fallback */
-  .full{
-    position:relative;isolation:isolate;
-    width:100vw;margin-inline:calc(50% - 50vw);
-    min-height:60vh;display:grid;place-items:center;
-    background-position:center;background-size:cover;background-repeat:no-repeat;
+  :root{
+    --ink:#0a1020; --muted:#8b95a4; --line:#1d2433;
+    --panel:#121826; --card:#0f1522; --accent:#1fd27a; --brand:#b30000;
+    --hero-dim:rgba(0,0,0,.45);
   }
-  .full::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.20);}
-  .hero-card{position:relative;z-index:2;background:#fff;border:1px solid var(--line);padding:24px;max-width:740px;width:92%}
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#e8eef9;background:#0b111b}
 
-  h1,h2,h3{margin:0 0 12px}
-  p{margin:0 0 12px}
+  header{position:sticky;top:0;z-index:50;background:rgba(11,17,27,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:18px}
+  .logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;letter-spacing:.2px;text-decoration:none}
+  .logo .cube{width:24px;height:24px;background:var(--brand);border-radius:4px}
+  nav{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:10px 14px;border:1px solid #263043;border-radius:10px;background:#0f1522;text-decoration:none;color:#eaf1ff}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.active{background:var(--brand);border-color:var(--brand);color:#fff}
 
-  /* CONTENT */
-  .section{max-width:1000px;margin:40px auto;padding:0 20px}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .panel{background:#fff;border:1px solid var(--line);padding:20px}
-  ul{margin-left:18px} li{margin:6px 0}
-
-  /* CONTACT */
-  .card-person{text-align:center}
-  .card-person img{max-width:220px;width:100%;height:auto;border:1px solid var(--line);display:block;margin:0 auto 12px}
-  .card-person a{color:var(--ink);text-decoration:none;border-bottom:1px solid #cfd6df}
-  .card-person a:hover{color:var(--red);border-color:var(--red)}
-
-  /* FOOTER */
+  .full{position:relative;isolation:isolate;width:100vw;margin-inline:calc(50% - 50vw);min-height:60svh;display:grid;place-items:center;background:center/cover no-repeat}
+  .full::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--hero-dim),var(--hero-dim))}
+  .pad{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:32px 20px}
+  .card{background:var(--card);border:1px solid var(--line);padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  h1,h2,h3{margin:0 0 10px;color:#fff}
+  p,li{color:#c0c9d8}
+  .section{max-width:1200px;margin:34px auto;padding:0 20px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .panel{background:#121826;border:1px solid #1d2433;padding:22px;border-radius:12px}
+  .person{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;background:#0f1522;border:1px solid #283245;border-radius:12px;padding:16px}
+  .person img{width:120px;height:120px;object-fit:cover;border-radius:10px;border:1px solid #3a465c}
+  .person .nm{color:#fff;font-weight:800}
+  .cta{display:inline-block;margin-top:8px;padding:12px 16px;border-radius:10px;background:var(--accent);color:#07101c;text-decoration:none;font-weight:700;border:1px solid #159c55}
+  .cta:hover{filter:brightness(1.05)}
   footer{border-top:1px solid var(--line);margin-top:40px}
-  .foot{max-width:1200px;margin:0 auto;padding:18px 20px;color:#555;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  .foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid #ccc}
-  .foot a:hover{color:var(--red);border-color:var(--red)}
-
-  @media (max-width:900px){ .grid2{grid-template-columns:1fr} .full{min-height:50vh} }
+  .foot{max-width:1200px;margin:0 auto;padding:18px 20px;color:#9aa6b9;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media (max-width:980px){ .grid-2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <a href="index.html" class="logo" aria-label="HOKAB">
-      <span class="logo-box"></span><span class="logo-text">HOKAB</span>
-    </a>
+    <a class="logo" href="index.html"><span class="cube"></span><span>HOKAB</span></a>
     <nav>
       <a class="btn" href="index.html">Grundförstärkning</a>
       <a class="btn active" href="projektledning.html">Projektledning</a>
-      <a class="btn btn--primary" href="#kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO: prova .jpg först, annars .jpeg under -->
-<section class="full" style="
-  background-image:
-    url('robert-bye-_4c7erArmdg-unsplash.jpg'),
-    url('robert-bye-_4c7erArmdg-unsplash.jpeg');">
-  <div class="hero-card">
-    <h1>Projektledning som driver igenom</h1>
-    <p>Vi leder bygg- och anläggningsprojekt från förstudie till överlämning. Korta beslutsvägar, tät uppföljning och stark närvaro i produktionen gör att tid, kostnad och kvalitet hålls enligt plan.</p>
-    <p>Som oberoende partner organiserar vi resurser, synkar entreprenörer och säkrar att beslut tas när de behövs. Mindre friktion – trygg leverans.</p>
-    <a class="btn btn--primary" href="#kontakt">Kontakta oss</a>
-  </div>
-</section>
-
-<section class="section">
-  <div class="grid2">
-    <article class="panel">
-      <h2>Det här gör vi</h2>
-      <ul>
-        <li>Planering: målbild, tidplan, kalkyl och risk</li>
-        <li>Upphandling och kontraktstöd</li>
-        <li>Ledning på plats: produktion, samordning, arbetsmiljö</li>
-        <li>Styrning: prognoser, ÄTA-hantering, månadsrapport</li>
-        <li>Besiktningar, överlämning och efterkalkyl</li>
-      </ul>
-      <p>Vi jobbar hands-on nära verksamheten – där besluten gör skillnad.</p>
-    </article>
-
-    <article class="panel">
-      <h2>Varför HOKAB?</h2>
-      <ul>
-        <li><b>Raka besked</b> och korta beslutsvägar</li>
-        <li><b>Byggbarhet i fokus</b> – praktisk erfarenhet + teknisk höjd</li>
-        <li><b>Helhetsgrepp</b> – från planering till driftsättning</li>
-        <li><b>Starkt nätverk</b> av entreprenörer och specialister</li>
-      </ul>
-      <p>Behöver du även grundförstärkning? Vi levererar kompletta lösningar tillsammans med marknadsledande partners.</p>
-    </article>
-  </div>
-</section>
-
-<!-- KONTAKT – ENBART HENRIK -->
-<section id="kontakt" class="section">
-  <h2>Kontakt</h2>
-  <div class="grid2">
-    <div class="panel card-person">
-      <!-- URL-kodad pga mellanslag -->
-      <img src="20230922%20Protech%20Portrett%2001.jpg" alt="Henrik Olsson" />
-      <h3>Henrik Olsson</h3>
-      <p>Projektledning</p>
-      <p><b>E-post:</b> <a href="mailto:henrik@hokab.se">henrik@hokab.se</a><br>
-         <b>Tel:</b> <a href="tel:+46708855579">070-88 555 79</a></p>
+<!-- HERO – stadsmiljö -->
+<section class="full" style="background-image:url('./img/joylynn-goh-pW7GWoG50sY-unsplash.jpg')">
+  <div class="pad">
+    <div class="card">
+      <h1>Projektledning som driver igenom</h1>
+      <p>
+        Vi leder projekt nära produktionen – med fokus på tid, ekonomi, kvalitet och arbetsmiljö. 
+        Beslutsvägarna är korta och uppföljningen tät. Resultatet: tempo i genomförandet och noll överraskningar.
+      </p>
     </div>
+  </div>
+</section>
 
-    <div class="panel">
-      <h3>Så startar vi upp</h3>
-      <ol style="margin-left:18px">
-        <li>Snabb avstämning om mål, tid och ekonomi</li>
-        <li>Upplägg för organisation, rapportering och beslut</li>
-        <li>Kickoff med entreprenörer – fokus på byggbarhet och risk</li>
-      </ol>
-      <p style="margin-top:8px">Vill du ses på plats? Vi bokar gärna ett kostnadsfritt uppstartsmöte.</p>
+<!-- INNEHÅLL -->
+<section class="section">
+  <div class="grid-2">
+    <article class="panel">
+      <h2>Vad vi gör</h2>
+      <ul>
+        <li>Produktionsledning och daglig styrning på plats</li>
+        <li>Tidplanering (L3/L4), dagbok och veckostyrning</li>
+        <li>Kalkyl, prognos, ÄTA-hantering och kontraktsuppföljning</li>
+        <li>Samordning mellan beställare, konsulter och UE</li>
+        <li>Risk, kvalitet, miljö och arbetsmiljö</li>
+      </ul>
+      <h3>Hur vi jobbar</h3>
+      <p>
+        Vi kombinerar tydlig planering med hög närvaro i produktionen. All kommunikation dokumenteras och avvikelser stängs snabbt. 
+        Ekonomin följs varje vecka – så att projektet landar där det ska.
+      </p>
+    </article>
+
+    <aside class="panel">
+      <div class="person">
+        <img src="./img/20230922 Protech Portrett 01.jpg" alt="Henrik Olsson">
+        <div>
+          <div class="nm">Henrik Olsson</div>
+          <div>Projektledare</div>
+          <div><a href="mailto:Henrik@hokab.se">Henrik@hokab.se</a> · <a href="tel:+46708855579">070-885 55 79</a></div>
+          <a class="cta" href="mailto:Henrik@hokab.se?subject=Projektledning">Boka ett uppstartsmöte</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- CASEBILD -->
+<section class="full" style="background-image:url('./img/robert-bye-_4c7erArmdg-unsplash.jpg');min-height:56svh">
+  <div class="pad">
+    <div class="card">
+      <h2>Byggbarhet i fokus</h2>
+      <p>Vi planerar logistik, maskinval och etapper för minimal störning – särskilt i trånga stadsmiljöer och nära drift.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="foot">
-    <div>© 2025 HOKAB</div>
-    <div><a href="mailto:info@hok.se">info@hok.se</a> · <a href="tel:+46708855579">070-885 55 79</a></div>
+    <div>© 2025 HOKAB – Hokonsult AB</div>
+    <div>Projektledning för bygg & anläggning · Norden</div>
   </div>
 </footer>
 
